@@ -408,7 +408,7 @@ section { padding: 7rem 8vw; }
 .tag-green { background: rgba(45,90,61,0.1); color: var(--accent); }
 
 /* ── TOPICS ── */
-.topics { background: var(--paper); }
+.topics { background: var(--cream); }
 
 .topics-intro {
   display: grid;
@@ -533,7 +533,7 @@ section { padding: 7rem 8vw; }
 
 /* ── ABOUT ── */
 .about {
-  background: var(--cream);
+  background: var(--paper);
   border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -616,6 +616,20 @@ section { padding: 7rem 8vw; }
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 0.1rem;
+}
+
+/* ── BLOG ── */
+.blog {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 /* ── PRICING ── */
