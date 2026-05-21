@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – DIY Finanzcoaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .legal-hero {
+    padding: 8rem 8vw 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .legal-hero .section-label { margin-bottom: 1rem; }
+  .legal-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-body {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 4rem 8vw 6rem;
+  }
+
+  .legal-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 3rem 0 0.8rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .legal-body h3 {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 2.5rem 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .legal-body h3::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .legal-body p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .legal-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  .legal-highlight {
+    background: rgba(45,90,61,0.06);
+    border-left: 2px solid var(--accent);
+    padding: 1.4rem 1.6rem;
+    border-radius: 0 2px 2px 0;
+    margin: 1.5rem 0;
+  }
+  .legal-highlight p {
+    margin: 0 0 0.6rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+  .legal-highlight p:last-child { margin-bottom: 0; }
+
+  .legal-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+  .contact-row a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .contact-row a:hover { text-decoration: underline; }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    transition: gap 0.2s;
+  }
+  .back-link:hover { gap: 0.75rem; }
+
+  .taetig-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: rgba(45,90,61,0.08);
+    border: 1px solid rgba(45,90,61,0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-top: 0.5rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">DIY <span>Finanzcoaching</span></a>
+  <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Kostenloses Kennlerngespräch buchen</a>
+</nav>
+
+<!-- LEGAL HERO -->
+<div class="legal-hero">
+  <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+  <div class="section-label">Rechtliches</div>
+  <h1>Impressum</h1>
+</div>
+
+<!-- LEGAL CONTENT -->
+<div class="legal-body">
+
+  <h2>Angaben gemäß § 5 TMG</h2>
+
+  <address class="legal-address">
+    Oliver Nitsch<br>
+    Breitenrathstraße 59<br>
+    57250 Netphen<br>
+    Deutschland
+  </address>
+  <div class="contact-row">
+    E-Mail: <a href="mailto:hallo@diy-finanzcoaching.de">hallo@diy-finanzcoaching.de</a>
+  </div>
+
+  <h3>Tätigkeit</h3>
+  <span class="taetig-badge">Finanzcoaching · Vermittlung von Finanzwissen</span>
+
+  <hr class="legal-divider">
+
+  <h2>Haftungsausschluss</h2>
+
+  <h3>Hinweis zur Tätigkeit</h3>
+  <div class="legal-highlight">
+    <p>Die angebotenen Leistungen stellen keine Anlage-, Versicherungs- oder Rechtsberatung dar.</p>
+    <p>Ich vermittle Wissen, Strukturen und Vorgehensweisen rund um persönliche Finanzen. Konkrete Entscheidungen, deren Umsetzung sowie daraus resultierende Konsequenzen liegen ausschließlich in der Verantwortung der Kundinnen und Kunden.</p>
+    <p>Es erfolgt kein Verkauf von Finanz- oder Versicherungsprodukten und keine Vergütung durch Dritte.</p>
+  </div>
+
+  <h3>Haftung für Inhalte</h3>
+  <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+  <p>Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+  <h3>Haftung für Links</h3>
+  <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+  <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+  <h3>Urheberrecht</h3>
+  <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+  <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">DIY Finanzcoaching</div>
+  <div>Oliver Nitsch · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+  <div>© 2025</div>
+</footer>
+
+</body>
+</html>
