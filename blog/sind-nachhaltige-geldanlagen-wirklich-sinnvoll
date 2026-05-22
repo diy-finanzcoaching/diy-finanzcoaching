@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sind nachhaltige Geldanlagen wirklich sinnvoll? – DIY Finanzcoaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+  /* ── BLOG POST PAGE ── */
+
+  .post-hero {
+    padding-top: 80px;
+    background: var(--paper);
+  }
+
+  .post-banner {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-header {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2.5rem;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  .post-category {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .post-category::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .post-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .post-lead {
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.4rem;
+    margin-bottom: 0;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── POST BODY ── */
+
+  .post-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .post-body p {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.85;
+    margin-bottom: 1.6rem;
+  }
+
+  .post-body p em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .post-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-top: 3.5rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .post-body ul li {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.7;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .post-body ul li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* ESG highlight box */
+  .post-esg-box {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 2px;
+    padding: 1.6rem 2rem;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .post-esg-box .esg-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .post-esg-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .post-esg-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 1.4rem;
+  }
+
+  /* Pull quote */
+  .post-pullquote {
+    margin: 3rem 0;
+    padding: 2rem 2.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-pullquote::before {
+    content: '"';
+    position: absolute;
+    top: -1rem;
+    left: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(184,151,58,0.2);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .post-pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.65;
+    color: var(--paper);
+    margin-bottom: 0 !important;
+    position: relative;
+  }
+
+  /* Fazit box */
+  .post-fazit {
+    background: rgba(45,90,61,0.06);
+    border: 1px solid rgba(45,90,61,0.18);
+    border-radius: 2px;
+    padding: 2rem 2.2rem;
+    margin-top: 3.5rem;
+  }
+
+  .post-fazit-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .post-fazit-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .post-fazit p {
+    color: var(--ink) !important;
+    margin-bottom: 0.9rem !important;
+  }
+
+  .post-fazit p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* ── AUTHOR BAR ── */
+  .post-author-bar {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+
+  .post-author-inner {
+    border-top: 1px solid var(--border);
+    padding-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .post-author-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--ink);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--paper);
+    overflow: hidden;
+    background-image: url('Assets/Portrait%20Bart%20gestutzt.png');
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .post-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .post-author-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .post-author-role {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ── CTA BANNER ── */
+  .post-cta-banner {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 5rem 8vw;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .post-cta-banner .section-label {
+    color: var(--gold);
+    justify-content: center;
+  }
+
+  .post-cta-banner .section-label::before {
+    background: var(--gold);
+  }
+
+  .post-cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    margin: 1rem auto 1.2rem;
+    max-width: 46ch;
+  }
+
+  .post-cta-banner p {
+    color: rgba(245,242,235,0.65);
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 48ch;
+    margin: 0 auto 2.5rem;
+  }
+
+  /* ── BACK LINK ── */
+  .post-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    margin-bottom: 2rem;
+  }
+
+  .post-back:hover { color: var(--accent); }
+
+  .post-back::before {
+    content: '←';
+    font-size: 1rem;
+    color: var(--accent);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .post-header,
+    .post-body,
+    .post-author-bar { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .post-pullquote { padding: 1.5rem 1.5rem; }
+    .post-pullquote p { font-size: 1.05rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">DIY <span>Finanzcoaching</span></a>
+  <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Kostenloses Kennlerngespräch buchen</a>
+</nav>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <img
+    class="post-banner"
+    src="Assets/Blog_1_Banner_Sind_nachhaltige_Geldanlagen_wirklich_sinnvoll.png"
+    alt="Nachhaltige Geldanlagen – Pflanze vor Börsen-Hintergrund"
+  >
+
+  <div class="post-header reveal">
+    <a class="post-back" href="blog.html">Zurück zum Blog</a>
+    <div class="post-meta">
+      <span class="post-category">Investment</span>
+      <span class="post-date">06. Januar 2026</span>
+    </div>
+    <h1 class="post-title">Sind nachhaltige Geldanlagen wirklich sinnvoll?</h1>
+    <p class="post-lead">Nachhaltige Geldanlagen sind vom Nischenthema nahezu zum Trend beim Investieren geworden. ESG-ETF, grüne Fonds, Impact Investing – das Versprechen: Rendite erzielen und gleichzeitig etwas Gutes tun. Klingt überzeugend. Ich dachte das lange auch.</p>
+  </div>
+</div>
+
+<!-- POST BODY -->
+<article class="post-body reveal">
+
+  <p>Ich habe mich viele Jahre mit nachhaltigem Investieren beschäftigt. Heute sehe ich vieles differenzierter. Nicht ablehnend – aber mit anderen Fragen als früher.</p>
+
+  <h2>Was bedeutet „nachhaltig" bei Geldanlagen überhaupt?</h2>
+
+  <p>Die meisten nachhaltigen Geldanlagen basieren auf dem sogenannten ESG-Prinzip:</p>
+
+  <div class="post-esg-box">
+    <div class="esg-label">Das ESG-Prinzip</div>
+    <div class="post-esg-row">
+      <span class="post-esg-letter">E</span>
+      <span><strong>Environmental</strong> – Umwelt: CO₂-Emissionen, Ressourcenumgang, Klimaschutz</span>
+    </div>
+    <div class="post-esg-row">
+      <span class="post-esg-letter">S</span>
+      <span><strong>Social</strong> – Soziales: Arbeitsbedingungen, Menschenrechte, gesellschaftliche Verantwortung</span>
+    </div>
+    <div class="post-esg-row">
+      <span class="post-esg-letter">G</span>
+      <span><strong>Governance</strong> – Unternehmensführung: Transparenz, Kontrolle, ethische Strukturen</span>
+    </div>
+  </div>
+
+  <p>Unternehmen werden anhand dieser Kriterien bewertet – und bestimmte Branchen werden von vornherein ausgeschlossen. Das Problem dabei: Es gibt keine einheitliche ESG-Definition. Unterschiedliche Fonds und Rating-Agenturen gewichten unterschiedlich. Ein Unternehmen kann in einem nachhaltigen ETF enthalten sein – und im nächsten ausgeschlossen werden.</p>
+
+  <p>Nachhaltiges Investieren ist kein objektiver Zustand. Es ist ein Filter. Und dieser Filter basiert auf Annahmen und Prioritäten – nicht auf neutralen Fakten.</p>
+
+  <h2>Wie wirken nachhaltige ETF wirklich?</h2>
+
+  <p>Hier ein Punkt, der oft übersehen wird: Wenn ich einen nachhaltigen ETF kaufe, stelle ich dem Unternehmen in der Regel kein neues Kapital zur Verfügung. Ich kaufe Anteile am Sekundärmarkt – von einem anderen Anleger.</p>
+
+  <div class="post-pullquote">
+    <p>Kein Windrad wird gebaut, weil ich investiere. Kein Unternehmen erhält direkt frisches Kapital. Der Einfluss ist indirekt – über Marktpreise und langfristige Kapitalströme.</p>
+  </div>
+
+  <p>Ob dieser Effekt im Alltag eines Privatanlegers wirklich messbar ist, sollte man zumindest ehrlich hinterfragen.</p>
+
+  <h2>Sind Unternehmen im Weltindex nicht ohnehin reguliert?</h2>
+
+  <p>Viele ESG-Strategien schließen „problematische" Unternehmen aus. Gleichzeitig investieren klassische globale ETF – etwa auf den MSCI World oder FTSE All-World – in große, börsennotierte Konzerne, die bereits:</p>
+
+  <ul>
+    <li>Umwelt- und Arbeitsgesetzen unterliegen</li>
+    <li>Kapitalmarktregulierung und Transparenzpflichten ausgesetzt sind</li>
+    <li>globalem Reputationsdruck standhalten müssen</li>
+  </ul>
+
+  <p>Die Frage ist berechtigt: Sind große, international tätige Unternehmen nicht ohnehin stark reguliert – und damit in vielen Bereichen bereits „relativ nachhaltig" im gesetzlichen Sinne? Perfekt sind sie sicher nicht. Aber ist der Unterschied zwischen einem ESG-Index und einem breiten Weltindex immer so groß, wie es die Marketingaussagen suggerieren?</p>
+
+  <h2>ESG-Kriterien: Nachhaltigkeit oder Wertentscheidung?</h2>
+
+  <p>Nachhaltige Geldanlagen arbeiten häufig mit Ausschlusslisten: Tabak, Glücksspiel, Pornografie, Rüstung, fossile Energien – manchmal auch Alkohol oder Gentechnik. Spätestens hier wird deutlich: ESG ist nicht rein technisch. Dahinter stecken normative Entscheidungen.</p>
+
+  <p>Ist Alkohol grundsätzlich problematisch – oder nur sein Missbrauch? Ist jede Form von Rüstung moralisch gleich zu bewerten? Sind pauschale Ausschlüsse komplexen ethischen Fragen wirklich gerecht? Nachhaltige ETF spiegeln nicht nur ökologische oder soziale Standards wider. Sie spiegeln gesellschaftliche Wertvorstellungen – und die sind individuell verschieden.</p>
+
+  <h2>Impact Investing: Mehr Wirkung, mehr Risiko</h2>
+
+  <p>Wer mit seiner Kapitalanlage direkten Einfluss nehmen möchte, landet häufig bei Green Bonds, nachhaltigen Unternehmensanleihen, Mikrokrediten oder Direktbeteiligungen. Hier fließt Kapital tatsächlich in konkrete Vorhaben. Allerdings gehen solche Anlagen oft einher mit:</p>
+
+  <ul>
+    <li>höherem Risiko und geringerer Streuung</li>
+    <li>weniger Liquidität als bei ETF</li>
+    <li>einer Wirkung, die sich nur schwer wirklich überprüfen lässt</li>
+  </ul>
+
+  <p>Je direkter der Impact, desto größer das Risiko. Das ist kein Argument dagegen. Aber es ist eines, das man kennen sollte.</p>
+
+  <h2>Das Individualitätsproblem</h2>
+
+  <p>Jeder Anleger setzt andere Prioritäten. Klimaschutz. Soziale Standards. Wirtschaftliche Stabilität. Bestimmte Branchen ein- oder ausschließen. Ein nachhaltiger ETF kann diese individuellen Überzeugungen nie vollständig abbilden. Er bleibt immer ein Kompromiss – ein vordefinierter Filter, der irgendjemandem passt, aber nie genau dir.</p>
+
+  <div class="post-fazit">
+    <div class="post-fazit-label">Fazit</div>
+    <p>Die ehrliche Antwort: Es kommt darauf an – und zwar mehr, als die Werbung vermuten lässt. Die Wirkung ist meist indirekt. ESG-Kriterien sind nicht einheitlich. Viele Bewertungen beruhen auf normativen Annahmen. Und direkter Impact geht häufig mit höherem Risiko einher.</p>
+    <p>Deshalb setze ich derzeit auf breit gestreute globale ETF – bewusst ohne zusätzliche Nachhaltigkeitsfilter. Nicht aus Gleichgültigkeit. Sondern aus pragmatischer Überlegung: breite Streuung, niedrige Kosten, transparente Struktur.</p>
+    <p>Nachhaltigkeit ist wichtig. Aber sie beginnt aus meiner Sicht nicht primär im ETF-Filter. Sondern bei politischen Rahmenbedingungen, unternehmerischer Verantwortung – und den Entscheidungen, die man täglich trifft.</p>
+  </div>
+
+</article>
+
+<!-- AUTHOR BAR -->
+<div class="post-author-bar reveal">
+  <div class="post-author-inner">
+    <div class="post-author-avatar"></div>
+    <div class="post-author-info">
+      <div class="post-author-name">Oliver Nitsch</div>
+      <div class="post-author-role">Bankkaufmann · Digitalbranche · DIY Finanzcoach</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="post-cta-banner reveal">
+  <div class="section-label">DIY Finanzcoaching</div>
+  <h2>Du hast Fragen zu deiner eigenen Geldanlage?</h2>
+  <p>Im Coaching gehen wir gemeinsam durch deine Situation – ohne Verkaufsgespräch, ohne Interessenkonflikt. Strukturiert, klar und auf Augenhöhe.</p>
+  <a href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" class="btn-primary">Kostenloses Kennlerngespräch buchen →</a>
+</section>
+
+<!-- FOOTER -->
+<footer></footer>
+
+<script src="main.js"></script>
+</body>
+</html>
