@@ -435,7 +435,7 @@ section { padding: 7rem 8vw; }
 
 /* ── APPROACH ── */
 .approach {
-  background: var(--cream);
+  background: #ffffff;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
