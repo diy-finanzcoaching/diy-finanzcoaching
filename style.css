@@ -83,6 +83,26 @@ nav {
   padding-top: 80px;
   position: relative;
   overflow: hidden;
+  /* Banner as background */
+  background-image: url('Assets/Banner_Startseite.png');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+/* Warm dark overlay so text stays readable */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(20, 18, 14, 0.82) 0%,
+    rgba(20, 18, 14, 0.72) 48%,
+    rgba(20, 18, 14, 0.20) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-left {
@@ -91,6 +111,30 @@ nav {
   justify-content: center;
   gap: 1.8rem;
   padding: 6rem 5vw 6rem 8vw;
+  position: relative;
+  z-index: 1;
+}
+
+/* Adapt text colors for dark background */
+.hero .hero-eyebrow {
+  color: var(--gold);
+}
+.hero .hero-eyebrow::before { background: var(--gold); }
+
+.hero h1 { color: var(--paper); }
+.hero h1 em { color: var(--gold); }
+
+.hero .hero-lead { color: rgba(245, 242, 235, 0.75); }
+
+.hero .btn-secondary {
+  color: var(--paper);
+  border-color: rgba(245, 242, 235, 0.35);
+  background: rgba(245, 242, 235, 0.07);
+  backdrop-filter: blur(4px);
+}
+.hero .btn-secondary:hover {
+  border-color: var(--gold);
+  background: rgba(184, 151, 58, 0.12);
 }
 
 .hero-right {
@@ -98,11 +142,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--cream);
-  border-left: 1px solid var(--border);
+  background: transparent;
+  border-left: 1px solid rgba(255,255,255,0.1);
   padding: 4rem 6vw;
   opacity: 0;
   animation: fadeIn 1s 0.6s forwards;
+  z-index: 1;
+}
+
+/* Subtle frosted-glass tint behind the stat card column */
+.hero-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 242, 235, 0.04);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
 }
 
 /* decorative large number */
@@ -115,9 +170,10 @@ nav {
   font-family: 'Playfair Display', serif;
   font-size: 26rem;
   font-weight: 700;
-  color: rgba(45, 90, 61, 0.05);
+  color: rgba(184, 151, 58, 0.08);
   pointer-events: none;
   line-height: 1;
+  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -226,12 +282,13 @@ nav {
 
 .stat-card {
   position: relative;
+  z-index: 3;
   background: var(--paper);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 2.5rem;
   max-width: 360px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.28);
 }
 
 .stat-card-label {
