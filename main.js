@@ -6,7 +6,7 @@
 const footerHTML = `
 <footer>
   <div class="footer-logo">DIY Finanzcoaching</div>
-  <div>Oliver Nitsch · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+  <div>Oliver Nitsch · <a href="/diy-finanzcoaching.de/impressum.html">Impressum</a> · <a href="/diy-finanzcoaching.de/datenschutz.html">Datenschutz</a></div>
   <div>© 2026</div>
 </footer>
 `;
