@@ -2,6 +2,43 @@
    DIY Finanzcoaching – main.js
    ============================================================ */
 
+// ── DYNAMIC NAV DRAWER ──
+// Drawer wird nach dem <nav> ins DOM eingefügt
+const drawerHTML = `
+<div class="nav-drawer" id="nav-drawer">
+  <a class="nav-drawer-link" href="/diy-finanzcoaching.de/">Start</a>
+  <a class="nav-drawer-link" href="/diy-finanzcoaching.de/blog/">Blog</a>
+  <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Termin buchen</a>
+  <div class="nav-drawer-meta">
+    <a href="/diy-finanzcoaching.de/impressum.html">Impressum</a>
+    <a href="/diy-finanzcoaching.de/datenschutz.html">Datenschutz</a>
+  </div>
+</div>
+`;
+document.querySelector('nav').insertAdjacentHTML('afterend', drawerHTML);
+
+// ── BURGER TOGGLE ──
+const navEl     = document.querySelector('nav');
+const drawer    = document.getElementById('nav-drawer');
+const burger    = document.querySelector('.nav-burger');
+
+if (burger) {
+  burger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('nav-drawer--open');
+    navEl.classList.toggle('nav--open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+}
+
+// Close drawer when a link inside is clicked
+drawer.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    drawer.classList.remove('nav-drawer--open');
+    navEl.classList.remove('nav--open');
+    document.body.style.overflow = '';
+  });
+});
+
 // ── DYNAMIC FOOTER ──
 const footerHTML = `
 <footer>
@@ -10,9 +47,39 @@ const footerHTML = `
   <div>© 2026</div>
 </footer>
 `;
-
 document.querySelector('footer').outerHTML = footerHTML;
 
+// ── HIDE-ON-SCROLL / SHOW-ON-SCROLL ──
+let lastScrollY = window.scrollY;
+let ticking = false;
+const SCROLL_THRESHOLD = 80; // px vom Top – Nav bleibt sichtbar ganz oben
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const currentY = window.scrollY;
+
+      if (currentY < SCROLL_THRESHOLD) {
+        // Ganz oben – immer sichtbar
+        navEl.classList.remove('nav--hidden');
+      } else if (currentY > lastScrollY) {
+        // Runterscrollen → verstecken
+        navEl.classList.add('nav--hidden');
+        // Drawer schließen falls offen
+        drawer.classList.remove('nav-drawer--open');
+        navEl.classList.remove('nav--open');
+        document.body.style.overflow = '';
+      } else {
+        // Hochscrollen → zeigen
+        navEl.classList.remove('nav--hidden');
+      }
+
+      lastScrollY = currentY;
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
 
 // ── SCROLL REVEAL ──
 const observer = new IntersectionObserver((entries) => {
@@ -26,7 +93,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-
 // ── ACTIVE NAV LINK (für Unterseiten) ──
 const currentPage = window.location.pathname.split('/').pop();
 document.querySelectorAll('nav a').forEach(link => {
@@ -35,7 +101,6 @@ document.querySelectorAll('nav a').forEach(link => {
     link.style.pointerEvents = 'none';
   }
 });
-
 
 // ── COST BARS ANIMATION ──
 const barObserver = new IntersectionObserver((entries) => {
