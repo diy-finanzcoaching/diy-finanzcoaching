@@ -193,6 +193,24 @@
 
   .blog-card:hover .blog-card-link { gap: 0.7rem; }
 
+  /* Karte allein in einer Reihe → volle Breite wie featured */
+  .blog-card.solo {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .blog-card.solo .blog-card-img {
+    width: 48%;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+
+  .blog-card.solo .blog-card-body {
+    justify-content: center;
+  }
+
   /* Featured card (first post) – spans full width */
   .blog-card.featured {
     grid-column: 1 / -1;
@@ -267,11 +285,14 @@
       padding-top: 7rem;
     }
     .blog-grid { grid-template-columns: 1fr; }
-    .blog-card.featured {
+    .blog-card.featured,
+    .blog-card.solo {
       flex-direction: column;
       grid-column: auto;
     }
-    .blog-card.featured .blog-card-img {
+
+    .blog-card.featured .blog-card-img,
+    .blog-card.solo .blog-card-img {
       width: 100%;
       aspect-ratio: 16/9;
       border-right: none;
@@ -287,16 +308,8 @@
 
 <!-- NAV -->
 <nav>
-<a class="nav-logo" href="/diy-finanzcoaching.de/">DIY <span>Finanzcoaching</span></a>
-  <div class="nav-links">
-    <a class="nav-link" href="/diy-finanzcoaching.de/blog/">Blog</a>
-  </div>
+  <a class="nav-logo" href="../index.html">DIY <span>Finanzcoaching</span></a>
   <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Kostenloses Kennlerngespräch buchen</a>
-  <button class="nav-burger" aria-label="Menü öffnen">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </nav>
 
 <!-- BLOG HERO -->
@@ -341,7 +354,7 @@
     </a>
 
     <!-- POST 1 -->
-    <a class="blog-card reveal" href="sind-nachhaltige-geldanlagen-wirklich-sinnvoll.html" data-category="Investment">
+    <a class="blog-card solo reveal" href="sind-nachhaltige-geldanlagen-wirklich-sinnvoll.html" data-category="Investment">
       <img
         class="blog-card-img"
         src="../Assets/Blog_1_Banner_Sind_nachhaltige_Geldanlagen_wirklich_sinnvoll.png"
