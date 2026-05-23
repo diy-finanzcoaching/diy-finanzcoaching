@@ -1,0 +1,35 @@
+name: Nav injizieren
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '_nav.html'        # Nur wenn Nav geändert wurde ODER
+      - '**.html'          # wenn eine HTML-Datei geändert wurde
+
+jobs:
+  inject-nav:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Nav in alle HTML-Dateien injizieren
+        run: python inject_nav.py
+
+      - name: Änderungen committen und pushen
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: nav automatisch aktualisiert"
+          git push
