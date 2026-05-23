@@ -285,8 +285,13 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   position: absolute;
   inset: 0;
   background: rgba(245, 242, 235, 0.04);
-  backdrop-filter: blur(2px);
   pointer-events: none;
+  z-index: 1;
+}
+
+.stat-card {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-right::before {
