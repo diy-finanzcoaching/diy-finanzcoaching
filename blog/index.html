@@ -94,7 +94,7 @@
 
   .blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 
@@ -279,16 +279,7 @@
     }
   }
 
-  @media (min-width: 901px) and (max-width: 1200px) {
-    .blog-grid { grid-template-columns: repeat(2, 1fr); }
-    .blog-card.featured { flex-direction: column; grid-column: auto; }
-    .blog-card.featured .blog-card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-    }
-  }
+
 
 </style>
 </head>
@@ -296,16 +287,8 @@
 
 <!-- NAV -->
 <nav>
-<a class="nav-logo" href="/diy-finanzcoaching.de/">DIY <span>Finanzcoaching</span></a>
-  <div class="nav-links">
-    <a class="nav-link" href="/diy-finanzcoaching.de/blog/">Blog</a>
-  </div>
+  <a class="nav-logo" href="../index.html">DIY <span>Finanzcoaching</span></a>
   <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Kostenloses Kennlerngespräch buchen</a>
-  <button class="nav-burger" aria-label="Menü öffnen">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </nav>
 
 <!-- BLOG HERO -->
@@ -368,6 +351,14 @@
     </a>
 
   </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="blog-cta-banner reveal">
+  <div class="section-label">DIY Finanzcoaching</div>
+  <h2>Aus Lesen wird Handeln.</h2>
+  <p>Im Coaching setzen wir das Gelesene konkret für deine Situation um – strukturiert, transparent, ohne Interessenkonflikt.</p>
+  <a href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" class="btn-primary">Kostenloses Kennlerngespräch buchen →</a>
 </section>
 
 <!-- FOOTER -->
