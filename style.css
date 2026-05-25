@@ -587,10 +587,6 @@ section { padding: 7rem 8vw; }
 .problem {
   background: var(--paper);
   color: var(--ink);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
   border-top: 1px solid var(--border);
 }
 
@@ -599,17 +595,23 @@ section { padding: 7rem 8vw; }
 .problem .section-title { color: var(--ink); }
 .problem .section-sub { color: var(--muted); }
 
+.problem-header {
+  max-width: 72ch;
+  margin-bottom: 3rem;
+}
+
 .problem-quote {
   font-family: 'Playfair Display', serif;
   font-size: 1.25rem;
   font-style: italic;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--ink);
-  padding: 2rem 2.5rem;
+  padding: 2rem 3rem;
   border-left: 2px solid var(--accent);
-  position: relative;
   background: var(--cream);
   border-radius: 0 2px 2px 0;
+  position: relative;
+  margin-bottom: 1.5rem;
 }
 
 .problem-quote::before {
@@ -625,19 +627,19 @@ section { padding: 7rem 8vw; }
 }
 
 .problem-addendum {
-  margin-top: 2rem;
   padding: 1.6rem 2rem;
   background: var(--cream);
   border: 1px solid var(--border);
   border-radius: 2px;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.8;
+  max-width: 80ch;
 }
 
 /* ── FAQ SECTION ── */
 .faq {
-  background: var(--cream);
+  background: var(--paper);
   border-top: 1px solid var(--border);
 }
 
@@ -721,7 +723,7 @@ section { padding: 7rem 8vw; }
 
 /* ── APPROACH ── */
 .approach {
-  background: var(--cream);
+  background: var(--paper);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -1004,7 +1006,7 @@ section { padding: 7rem 8vw; }
 }
 
 /* ── PRICING ── */
-.pricing { background: var(--paper); }
+.pricing { background: var(--cream); }
 
 .pricing-layout {
   display: grid;
