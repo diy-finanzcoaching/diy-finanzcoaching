@@ -602,16 +602,17 @@ section { padding: 7rem 8vw; }
 
 .problem-quote {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-style: italic;
   line-height: 1.7;
   color: var(--ink);
-  padding: 2rem 3rem;
+  padding: 2rem 2.5rem;
   border-left: 2px solid var(--accent);
   background: var(--cream);
   border-radius: 0 2px 2px 0;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 60ch;
 }
 
 .problem-quote::before {
@@ -627,14 +628,12 @@ section { padding: 7rem 8vw; }
 }
 
 .problem-addendum {
-  padding: 1.6rem 2rem;
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: 2px;
   font-size: 0.97rem;
   color: var(--muted);
-  line-height: 1.8;
-  max-width: 80ch;
+  line-height: 1.85;
+  max-width: 64ch;
+  border-left: 2px solid var(--border);
+  padding-left: 1.5rem;
 }
 
 /* ── FAQ SECTION ── */
@@ -726,6 +725,7 @@ section { padding: 7rem 8vw; }
   background: var(--paper);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  padding: 7rem 8vw;
 }
 
 .approach-grid {
