@@ -102,6 +102,24 @@ document.querySelectorAll('nav a').forEach(link => {
   }
 });
 
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('faq-open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('faq-open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    // Toggle clicked
+    if (!isOpen) {
+      item.classList.add('faq-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
 // ── COST BARS ANIMATION ──
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
