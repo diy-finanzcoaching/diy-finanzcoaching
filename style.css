@@ -587,6 +587,10 @@ section { padding: 7rem 8vw; }
 .problem {
   background: var(--paper);
   color: var(--ink);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 6rem;
+  align-items: center;
   border-top: 1px solid var(--border);
 }
 
@@ -595,24 +599,26 @@ section { padding: 7rem 8vw; }
 .problem .section-title { color: var(--ink); }
 .problem .section-sub { color: var(--muted); }
 
-.problem-header {
-  max-width: 72ch;
-  margin-bottom: 3rem;
+.problem-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
+.problem-header { }
 
 .problem-quote {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--ink);
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 2.5rem 2.5rem 3rem;
   border-left: 2px solid var(--accent);
   background: var(--cream);
   border-radius: 0 2px 2px 0;
   position: relative;
-  margin-bottom: 2rem;
-  max-width: 60ch;
+  align-self: center;
 }
 
 .problem-quote::before {
@@ -628,10 +634,9 @@ section { padding: 7rem 8vw; }
 }
 
 .problem-addendum {
-  font-size: 0.97rem;
+  font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.85;
-  max-width: 64ch;
   border-left: 2px solid var(--border);
   padding-left: 1.5rem;
 }
