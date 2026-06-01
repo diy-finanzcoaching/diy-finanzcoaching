@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Excel-Tool vs. Finanzguru – DIY Finanzcoaching</title>
+<title>Sind nachhaltige Geldanlagen wirklich sinnvoll? – DIY Finanzcoaching</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../../style.css">
 <style>
 
   /* ── BLOG POST PAGE ── */
@@ -144,65 +144,43 @@
     margin-top: 0.1rem;
   }
 
-  /* Vergleichs-Box */
-  .post-compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
+  /* ESG highlight box */
+  .post-esg-box {
+    background: var(--cream);
     border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
     border-radius: 2px;
+    padding: 1.6rem 2rem;
     margin: 2rem 0;
-    overflow: hidden;
-  }
-
-  .post-compare-col {
-    background: var(--paper);
-    padding: 1.8rem 1.8rem;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.6rem;
   }
 
-  .post-compare-col.highlight {
-    background: rgba(45,90,61,0.05);
-  }
-
-  .post-compare-label {
+  .post-esg-box .esg-label {
     font-size: 0.72rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 500;
-    color: var(--muted);
-    margin-bottom: 0.2rem;
-  }
-
-  .post-compare-col.highlight .post-compare-label {
     color: var(--accent);
-  }
-
-  .post-compare-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--ink);
+    font-weight: 500;
     margin-bottom: 0.4rem;
   }
 
-  .post-compare-item {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.6;
+  .post-esg-row {
     display: flex;
-    align-items: flex-start;
-    gap: 0.7rem;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.6;
   }
 
-  .post-compare-item::before {
-    content: '→';
-    color: var(--accent);
+  .post-esg-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
     font-weight: 700;
-    flex-shrink: 0;
+    color: var(--accent);
+    min-width: 1.4rem;
   }
 
   /* Pull quote */
@@ -236,35 +214,6 @@
     color: var(--paper);
     margin-bottom: 0 !important;
     position: relative;
-  }
-
-  /* Highlight-Box (zentrale Zahl / Kernaussage) */
-  .post-highlight-box {
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 2px;
-    padding: 2rem 2.2rem;
-    margin: 2.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .post-highlight-box .highlight-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-  }
-
-  .post-highlight-box .highlight-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--paper);
-    line-height: 1.6;
-    margin: 0;
   }
 
   /* Fazit box */
@@ -423,7 +372,6 @@
     .post-author-bar { padding-left: 1.25rem; padding-right: 1.25rem; }
     .post-pullquote { padding: 1.5rem 1.5rem; }
     .post-pullquote p { font-size: 1.05rem; }
-    .post-compare { grid-template-columns: 1fr; }
   }
 
 </style>
@@ -432,10 +380,10 @@
 
 <!-- NAV -->
 <nav>
-<a class="nav-logo" href="../">DIY <span>Finanzcoaching</span></a>
+<a class="nav-logo" href="../../">DIY <span>Finanzcoaching</span></a>
   <div class="nav-links">
-    <a class="nav-link" href="../blog/">Blog</a>
-    <a class="nav-link" href="#contact">Kontakt</a>
+    <a class="nav-link" href="../../blog/">Blog</a>
+    <a class="nav-link" href="../../#contact">Kontakt</a>
   </div>
   <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Kostenloses Kennlerngespräch buchen</a>
   <button class="nav-burger" aria-label="Menü öffnen">
@@ -449,97 +397,99 @@
 <div class="post-hero">
   <img
     class="post-banner"
-    src="../Assets/Blog_2_Banner_Excel_vs_Finanzguru.png"
-    alt="Excel-Tool vs. Finanzguru – Taschenrechner und Tabelle"
+    src="banner.png"
+    alt="Nachhaltige Geldanlagen – Pflanze vor Börsen-Hintergrund"
   >
 
   <div class="post-header reveal">
-    <a class="post-back" href="/blog/">Zurück zum Blog</a>
+    <a class="post-back" href="../">Zurück zum Blog</a>
     <div class="post-meta">
-      <span class="post-category">Finanzüberblick</span>
-      <span class="post-date">04. Februar 2026</span>
+      <span class="post-category">Investment</span>
+      <span class="post-date">06. Januar 2026</span>
     </div>
-    <h1 class="post-title">Warum mein einfaches Excel-Tool für mich besser funktioniert als Finanzguru</h1>
-    <p class="post-lead">Ich habe Finanzguru Pro getestet. Die Technik ist beeindruckend – Konten automatisch verknüpft, Umsätze erkannt, Verträge identifiziert, Budgets vorgeschlagen. Trotzdem nutze ich heute wieder mein eigenes, bewusst schlichtes Excel-Tool.</p>
+    <h1 class="post-title">Sind nachhaltige Geldanlagen wirklich sinnvoll?</h1>
+    <p class="post-lead">Nachhaltige Geldanlagen sind vom Nischenthema nahezu zum Trend beim Investieren geworden. ESG-ETF, grüne Fonds, Impact Investing – das Versprechen: Rendite erzielen und gleichzeitig etwas Gutes tun. Klingt überzeugend. Ich dachte das lange auch.</p>
   </div>
 </div>
 
 <!-- POST BODY -->
 <article class="post-body reveal">
 
-  <p>Nicht weil Finanzguru schlecht wäre. Sondern weil mein Ziel ein anderes ist.</p>
+  <p>Ich habe mich viele Jahre mit nachhaltigem Investieren beschäftigt. Heute sehe ich vieles differenzierter. Nicht ablehnend – aber mit anderen Fragen als früher.</p>
 
-  <h2>Was Finanzguru gut kann</h2>
+  <h2>Was bedeutet „nachhaltig" bei Geldanlagen überhaupt?</h2>
 
-  <p>Bevor ich kritisch werde: Die App hat echte Stärken.</p>
+  <p>Die meisten nachhaltigen Geldanlagen basieren auf dem sogenannten ESG-Prinzip:</p>
 
-  <ul>
-    <li>Automatische Kontoanbindung und Kategorisierung von Einnahmen und Ausgaben</li>
-    <li>Vertrags- und Abo-Erkennung auf einen Blick</li>
-    <li>Monatsbudgets und Prognosen bis zum nächsten Gehalt</li>
-  </ul>
+  <div class="post-esg-box">
+    <div class="esg-label">Das ESG-Prinzip</div>
+    <div class="post-esg-row">
+      <span class="post-esg-letter">E</span>
+      <span><strong>Environmental</strong> – Umwelt: CO₂-Emissionen, Ressourcenumgang, Klimaschutz</span>
+    </div>
+    <div class="post-esg-row">
+      <span class="post-esg-letter">S</span>
+      <span><strong>Social</strong> – Soziales: Arbeitsbedingungen, Menschenrechte, gesellschaftliche Verantwortung</span>
+    </div>
+    <div class="post-esg-row">
+      <span class="post-esg-letter">G</span>
+      <span><strong>Governance</strong> – Unternehmensführung: Transparenz, Kontrolle, ethische Strukturen</span>
+    </div>
+  </div>
 
-  <p>Gerade für Menschen, die ihre Finanzen bisher kaum strukturiert haben, kann das sehr hilfreich sein. Die App nimmt Arbeit ab und schafft schnell Übersicht. Technisch ist das wirklich gut gemacht.</p>
+  <p>Unternehmen werden anhand dieser Kriterien bewertet – und bestimmte Branchen werden von vornherein ausgeschlossen. Das Problem dabei: Es gibt keine einheitliche ESG-Definition. Unterschiedliche Fonds und Rating-Agenturen gewichten unterschiedlich. Ein Unternehmen kann in einem nachhaltigen ETF enthalten sein – und im nächsten ausgeschlossen werden.</p>
 
-  <h2>Wo ich an Grenzen gestoßen bin</h2>
+  <p>Nachhaltiges Investieren ist kein objektiver Zustand. Es ist ein Filter. Und dieser Filter basiert auf Annahmen und Prioritäten – nicht auf neutralen Fakten.</p>
+
+  <h2>Wie wirken nachhaltige ETF wirklich?</h2>
+
+  <p>Hier ein Punkt, der oft übersehen wird: Wenn ich einen nachhaltigen ETF kaufe, stelle ich dem Unternehmen in der Regel kein neues Kapital zur Verfügung. Ich kaufe Anteile am Sekundärmarkt – von einem anderen Anleger.</p>
 
   <div class="post-pullquote">
-    <p>Automatisierung ist bequem – aber sie ersetzt kein Verständnis.</p>
+    <p>Kein Windrad wird gebaut, weil ich investiere. Kein Unternehmen erhält direkt frisches Kapital. Der Einfluss ist indirekt – über Marktpreise und langfristige Kapitalströme.</p>
   </div>
 
-  <p>Die KI erkennt viele Buchungen korrekt, aber nicht alle. Individuelle Besonderheiten, einmalige Abweichungen – das wird nicht immer sauber erfasst. Korrekturen sind möglich, aber umständlich. Irgendwann hatte ich das Gefühl, dem System nicht mehr wirklich vertrauen zu können.</p>
+  <p>Ob dieser Effekt im Alltag eines Privatanlegers wirklich messbar ist, sollte man zumindest ehrlich hinterfragen.</p>
 
-  <p>Das eigentliche Problem war dabei nicht die Fehlerquote. Es war das Prinzip: Ich wusste nicht mehr genau, woher jede Zahl stammt. Ich hatte den Faden verloren. Und das widerspricht meinem Ansatz grundlegend.</p>
+  <h2>Sind Unternehmen im Weltindex nicht ohnehin reguliert?</h2>
 
-  <h2>Der entscheidende Unterschied: Monatssicht vs. Zukunftssimulation</h2>
-
-  <div class="post-compare">
-    <div class="post-compare-col">
-      <div class="post-compare-label">Finanzguru</div>
-      <div class="post-compare-title">Monatssicht</div>
-      <div class="post-compare-item">Analysiert vergangene Buchungen</div>
-      <div class="post-compare-item">Beantwortet: Wie viel bleibt bis zum nächsten Gehalt?</div>
-      <div class="post-compare-item">Automatisch, aber mit Blackbox-Logik</div>
-    </div>
-    <div class="post-compare-col highlight">
-      <div class="post-compare-label">Excel-Tool</div>
-      <div class="post-compare-title">Zukunftssimulation</div>
-      <div class="post-compare-item">Simuliert Cashflow über 180–365 Tage</div>
-      <div class="post-compare-item">Beantwortet: Was kann ich heute ausgeben?</div>
-      <div class="post-compare-item">Manuell, aber vollständig transparent</div>
-    </div>
-  </div>
-
-  <p>Mein Excel-Tool erfasst alle bekannten, wiederkehrenden Einnahmen und Ausgaben – inklusive Intervall und Datum. Auch jährliche oder quartalsweise Zahlungen wie Versicherungen oder Grundabgaben. Für solche Positionen bildet das Tool automatisch Rücklagen. Zusätzlich gibt es einen festen Puffer, der im simulierten Verlauf nie unterschritten werden darf.</p>
-
-  <div class="post-highlight-box">
-    <div class="highlight-label">Die zentrale Frage</div>
-    <p class="highlight-text">Wie viel kann ich heute zusätzlich ausgeben – ohne später in Schwierigkeiten zu geraten?</p>
-  </div>
-
-  <p>Das ist die Information, die ich brauche. Finanzguru beantwortet diese Frage nicht – zumindest nicht so, wie ich sie stelle.</p>
-
-  <h2>Warum der manuelle Aufwand kein Nachteil ist</h2>
-
-  <p>Zu Beginn erfordert das Tool einmalige Arbeit: Umsätze des letzten Jahres durchgehen, wiederkehrende Zahlungen erfassen, Pauschalen für variable Ausgaben festlegen. Ja, das ist manuell. Aber genau darin liegt der Vorteil.</p>
+  <p>Viele ESG-Strategien schließen „problematische" Unternehmen aus. Gleichzeitig investieren klassische globale ETF – etwa auf den MSCI World oder FTSE All-World – in große, börsennotierte Konzerne, die bereits:</p>
 
   <ul>
-    <li>Ich verstehe mein System vollständig</li>
-    <li>Ich weiß, welche Annahmen hinter jeder Zahl stehen</li>
-    <li>Es gibt keine Blackbox</li>
+    <li>Umwelt- und Arbeitsgesetzen unterliegen</li>
+    <li>Kapitalmarktregulierung und Transparenzpflichten ausgesetzt sind</li>
+    <li>globalem Reputationsdruck standhalten müssen</li>
   </ul>
 
-  <p>Der laufende Aufwand ist überschaubar: Kontostand aktualisieren, Buchungen grob abgleichen – fertig. Nicht mehr Arbeit als die Pflege einer App. Aber mit deutlich mehr Klarheit.</p>
+  <p>Die Frage ist berechtigt: Sind große, international tätige Unternehmen nicht ohnehin stark reguliert – und damit in vielen Bereichen bereits „relativ nachhaltig" im gesetzlichen Sinne? Perfekt sind sie sicher nicht. Aber ist der Unterschied zwischen einem ESG-Index und einem breiten Weltindex immer so groß, wie es die Marketingaussagen suggerieren?</p>
 
-  <h2>Technik oder Kontrolle?</h2>
+  <h2>ESG-Kriterien: Nachhaltigkeit oder Wertentscheidung?</h2>
 
-  <p>Finanzguru steht für Automatisierung. Mein Tool steht für Kontrolle. Die App analysiert die Vergangenheit. Mein Tool simuliert die Zukunft. Beides kann sinnvoll sein – je nach Ziel. Mein Ziel ist nicht maximale Bequemlichkeit. Mein Ziel ist ein guter Überblick bei möglichst geringem Aufwand.</p>
+  <p>Nachhaltige Geldanlagen arbeiten häufig mit Ausschlusslisten: Tabak, Glücksspiel, Pornografie, Rüstung, fossile Energien – manchmal auch Alkohol oder Gentechnik. Spätestens hier wird deutlich: ESG ist nicht rein technisch. Dahinter stecken normative Entscheidungen.</p>
+
+  <p>Ist Alkohol grundsätzlich problematisch – oder nur sein Missbrauch? Ist jede Form von Rüstung moralisch gleich zu bewerten? Sind pauschale Ausschlüsse komplexen ethischen Fragen wirklich gerecht? Nachhaltige ETF spiegeln nicht nur ökologische oder soziale Standards wider. Sie spiegeln gesellschaftliche Wertvorstellungen – und die sind individuell verschieden.</p>
+
+  <h2>Impact Investing: Mehr Wirkung, mehr Risiko</h2>
+
+  <p>Wer mit seiner Kapitalanlage direkten Einfluss nehmen möchte, landet häufig bei Green Bonds, nachhaltigen Unternehmensanleihen, Mikrokrediten oder Direktbeteiligungen. Hier fließt Kapital tatsächlich in konkrete Vorhaben. Allerdings gehen solche Anlagen oft einher mit:</p>
+
+  <ul>
+    <li>höherem Risiko und geringerer Streuung</li>
+    <li>weniger Liquidität als bei ETF</li>
+    <li>einer Wirkung, die sich nur schwer wirklich überprüfen lässt</li>
+  </ul>
+
+  <p>Je direkter der Impact, desto größer das Risiko. Das ist kein Argument dagegen. Aber es ist eines, das man kennen sollte.</p>
+
+  <h2>Das Individualitätsproblem</h2>
+
+  <p>Jeder Anleger setzt andere Prioritäten. Klimaschutz. Soziale Standards. Wirtschaftliche Stabilität. Bestimmte Branchen ein- oder ausschließen. Ein nachhaltiger ETF kann diese individuellen Überzeugungen nie vollständig abbilden. Er bleibt immer ein Kompromiss – ein vordefinierter Filter, der irgendjemandem passt, aber nie genau dir.</p>
 
   <div class="post-fazit">
     <div class="post-fazit-label">Fazit</div>
-    <p>Finanzguru ist eine moderne, technisch starke App. Mein Excel-Tool ist bewusst einfach – aber strategischer ausgerichtet. Es beantwortet für mich die eine Frage, auf die es ankommt: Was kann ich heute ausgeben, ohne meine finanzielle Stabilität zu gefährden?</p>
-    <p>Genau deshalb nutze ich es.</p>
-    <p>Wer das Tool selbst ausprobieren möchte: <a href="mailto:info@diy-finanzcoaching.de" style="color: var(--accent); font-weight: 500;">Schreib mir kurz eine E-Mail</a> – ich schicke es dir kostenlos zu.</p>
+    <p>Die ehrliche Antwort: Es kommt darauf an – und zwar mehr, als die Werbung vermuten lässt. Die Wirkung ist meist indirekt. ESG-Kriterien sind nicht einheitlich. Viele Bewertungen beruhen auf normativen Annahmen. Und direkter Impact geht häufig mit höherem Risiko einher.</p>
+    <p>Deshalb setze ich derzeit auf breit gestreute globale ETF – bewusst ohne zusätzliche Nachhaltigkeitsfilter. Nicht aus Gleichgültigkeit. Sondern aus pragmatischer Überlegung: breite Streuung, niedrige Kosten, transparente Struktur.</p>
+    <p>Nachhaltigkeit ist wichtig. Aber sie beginnt aus meiner Sicht nicht primär im ETF-Filter. Sondern bei politischen Rahmenbedingungen, unternehmerischer Verantwortung – und den Entscheidungen, die man täglich trifft.</p>
   </div>
 
 </article>
@@ -558,6 +508,6 @@
 <!-- FOOTER -->
 <footer></footer>
 
-<script src="../main.js"></script>
+<script src="../../main.js"></script>
 </body>
 </html>
