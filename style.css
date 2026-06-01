@@ -1034,12 +1034,13 @@ section { padding: 7rem 8vw; }
   content: 'Jahresmitgliedschaft';
   position: absolute;
   /* 45° corner ribbon. Center sits on the corner diagonal so both ends
-     are clipped symmetrically. Visible band length = 2·d (d = 5.5rem),
-     so width must match to fit the text. With width=b, height=h:
+     are clipped symmetrically. Visible band length = 2·d (d = 5.5rem).
+     Width is made wider than 2·d so both ends overshoot the card edges
+     and get clipped flush by overflow:hidden. With width=b, height=h:
      right = d/√2 − b/2  and  top = d/√2 − h/2  (d/√2 ≈ 3.89rem). */
   top: 3.2rem;
-  right: -1.6rem;
-  width: 11rem;
+  right: -4.1rem;
+  width: 16rem;
   box-sizing: border-box;
   text-align: center;
   background: var(--gold);
