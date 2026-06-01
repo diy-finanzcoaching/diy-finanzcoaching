@@ -1967,6 +1967,75 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   margin-bottom: 0 !important;
 }
 
+/* ── POST BIBLE QUOTE ── */
+.post-bible {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+  font-style: italic;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.post-bible cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ── POST TABLE ── */
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.post-table th,
+.post-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-table thead th {
+  background: var(--cream);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.post-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.post-table-total td {
+  border-top: 2px solid var(--ink);
+  padding-top: 1rem;
+}
+
+/* ── POST EXTERNAL LINK ── */
+.post-external-link {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-light);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.post-external-link:hover {
+  color: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
 .post-author-bar {
   max-width: 760px;
   margin: 0 auto;

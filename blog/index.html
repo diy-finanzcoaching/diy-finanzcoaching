@@ -53,16 +53,58 @@
   <button class="filter-btn active" data-filter="all">Alle</button>
   <button class="filter-btn" data-filter="Investment">Investment</button>
   <button class="filter-btn" data-filter="Finanzüberblick">Finanzüberblick</button>
+  <button class="filter-btn" data-filter="Versicherungen">Versicherungen</button>
+  <button class="filter-btn" data-filter="Finanzen &amp; Bibel">Finanzen &amp; Bibel</button>
 </div>
 
 <!-- BLOG GRID -->
-<!-- NEU: Neue Blog-Posts oben einfügen. Den jeweils neuesten Post als .featured kennzeichnen,
-     den vorherigen .featured entfernen. Banner-Pfad: Assets/Blog_X_Banner_....png -->
 <section class="blog-grid-section">
   <div class="blog-grid">
 
-    <!-- POST 2 – featured (neuester Beitrag) -->
-    <a class="blog-card featured reveal" href="excel-tool-vs-finanzguru/" data-category="Finanzüberblick">
+    <!-- POST 4 – featured (neuester Beitrag) -->
+    <a class="blog-card featured reveal" href="was-traegt-wenn-alles-wackelt/" data-category="Finanzen &amp; Bibel">
+      <img
+        class="blog-card-img"
+        src="was-traegt-wenn-alles-wackelt/banner.png"
+        alt="Was trägt, wenn alles wackelt?"
+        loading="lazy"
+        width="800"
+        height="450"
+      >
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-category">Finanzen &amp; Bibel</span>
+          <time class="blog-card-date" datetime="2026-04-08">08. April 2026</time>
+        </div>
+        <h2 class="blog-card-title">Was trägt, wenn alles wackelt?</h2>
+        <p class="blog-card-excerpt">Krisen, Unsicherheit, bröckelnde Sicherheit – was trägt wirklich, wenn Finanzplanung an ihre Grenzen stößt? Ein persönlicher Beitrag über Finanzen und Vertrauen.</p>
+        <span class="blog-card-link">Beitrag lesen →</span>
+      </div>
+    </a>
+
+    <!-- POST 3 -->
+    <a class="blog-card reveal" href="welche-versicherungen-brauche-ich-wirklich/" data-category="Versicherungen">
+      <img
+        class="blog-card-img"
+        src="welche-versicherungen-brauche-ich-wirklich/banner.png"
+        alt="Welche Versicherungen brauche ich wirklich?"
+        loading="lazy"
+        width="800"
+        height="450"
+      >
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-category">Versicherungen</span>
+          <time class="blog-card-date" datetime="2026-03-12">12. März 2026</time>
+        </div>
+        <h2 class="blog-card-title">Welche Versicherungen brauche ich wirklich?</h2>
+        <p class="blog-card-excerpt">Vier Leitfragen, eine ehrliche Kostenperspektive und der Blick auf das, was bereits abgesichert ist. Ein strukturierter Überblick für nüchterne Entscheidungen.</p>
+        <span class="blog-card-link">Beitrag lesen →</span>
+      </div>
+    </a>
+
+    <!-- POST 2 -->
+    <a class="blog-card reveal" href="excel-tool-vs-finanzguru/" data-category="Finanzüberblick">
       <img
         class="blog-card-img"
         src="excel-tool-vs-finanzguru/banner.png"
@@ -83,7 +125,7 @@
     </a>
 
     <!-- POST 1 -->
-    <a class="blog-card solo reveal" href="sind-nachhaltige-geldanlagen-wirklich-sinnvoll/" data-category="Investment">
+    <a class="blog-card reveal" href="sind-nachhaltige-geldanlagen-wirklich-sinnvoll/" data-category="Investment">
       <img
         class="blog-card-img"
         src="sind-nachhaltige-geldanlagen-wirklich-sinnvoll/banner.png"
