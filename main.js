@@ -161,7 +161,7 @@ document.querySelectorAll('.cost-chart').forEach(el => barObserver.observe(el));
 // ── COOKIE BANNER & ANALYTICS ──
 const COOKIE_KEY = 'diy_cookie_consent';
 // ↓ Google Analytics Measurement-ID hier eintragen
-const GA_ID = 'G-XXXXXXXXXX';
+const GA_ID = 'G-5M18DV1M83';
 
 function loadAnalytics() {
   if (document.getElementById('ga-script')) return;
