@@ -1398,15 +1398,47 @@ footer a:hover { color: rgba(245,242,235,0.7); }
 /* ── BLOG LIST ── */
 .blog-page-hero {
   padding: 10rem 8vw 5rem;
-  background: var(--paper);
+  background: var(--ink);
+  background-image: url('blog/banner.png');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--border);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: end;
+  position: relative;
+  overflow: hidden;
 }
 
-.blog-page-hero .section-label { margin-bottom: 1rem; }
+.blog-page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(20, 18, 14, 0.82) 0%,
+    rgba(20, 18, 14, 0.72) 48%,
+    rgba(20, 18, 14, 0.20) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blog-page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.blog-page-hero .section-label {
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.blog-page-hero .section-label::before {
+  background: var(--gold);
+}
 
 .blog-page-hero h1 {
   font-family: 'Playfair Display', serif;
@@ -1414,18 +1446,18 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--paper);
   margin-bottom: 0;
 }
 
 .blog-page-hero h1 em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--gold);
 }
 
 .blog-hero-sub {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: rgba(245, 242, 235, 0.75);
   line-height: 1.8;
   max-width: 44ch;
   align-self: end;
