@@ -1184,7 +1184,8 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   .approach-grid, .approach-grid--4 { grid-template-columns: 1fr; }
   .approach-card { border-right: none; border-bottom: 1px solid var(--border); }
   .topics-grid { grid-template-columns: 1fr; }
-  .about-visual { aspect-ratio: 3/2; }
+  .about-visual { aspect-ratio: 4/5; max-height: 420px; }
+  .about-visual::before { display: none; }
   section { padding: 5rem 6vw; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
 }
