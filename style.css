@@ -1033,9 +1033,9 @@ section { padding: 7rem 8vw; }
 .price-card::before {
   content: 'Jahresmitgliedschaft';
   position: absolute;
-  top: 2.2rem;
-  right: -2.8rem;
-  width: 12rem;
+  top: 1.8rem;
+  right: -2.2rem;
+  width: 10rem;
   text-align: center;
   background: var(--gold);
   color: var(--ink);
@@ -1044,7 +1044,7 @@ section { padding: 7rem 8vw; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.3rem 0;
-  transform: rotate(35deg);
+  transform: rotate(45deg);
   transform-origin: center center;
 }
 
