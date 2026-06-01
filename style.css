@@ -727,34 +727,37 @@ section { padding: 7rem 8vw; }
 
 /* ── APPROACH ── */
 .approach {
-  background: var(--paper);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--ink);
   padding: 7rem 8vw;
 }
+
+.approach .section-label { color: var(--gold); }
+.approach .section-label::before { background: var(--gold); }
+.approach .section-title { color: var(--paper); }
+.approach .section-sub { color: rgba(245,242,235,0.6); }
 
 .approach-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   margin-top: 4rem;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .approach-card {
   padding: 2.5rem 2rem;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid rgba(255,255,255,0.1);
   position: relative;
   transition: background 0.2s;
 }
 .approach-card:last-child { border-right: none; }
-.approach-card:hover { background: var(--paper); }
+.approach-card:hover { background: rgba(255,255,255,0.04); }
 
 .approach-num {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 700;
-  color: rgba(45,90,61,0.1);
+  color: rgba(255,255,255,0.07);
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -764,10 +767,10 @@ section { padding: 7rem 8vw; }
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  color: var(--ink);
+  color: var(--paper);
 }
 
-.approach-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+.approach-text { font-size: 0.9rem; color: rgba(245,242,235,0.6); line-height: 1.7; }
 
 .approach-tag {
   display: inline-block;
@@ -781,9 +784,9 @@ section { padding: 7rem 8vw; }
 }
 .approach-grid--4 { grid-template-columns: repeat(4, 1fr); }
 
-.tag-red { background: rgba(180,60,60,0.08); color: #b43c3c; }
-.tag-amber { background: rgba(184,151,58,0.1); color: #7a6015; }
-.tag-green { background: rgba(45,90,61,0.1); color: var(--accent); }
+.tag-red { background: rgba(180,60,60,0.25); color: #e87878; }
+.tag-amber { background: rgba(184,151,58,0.2); color: #d4ac50; }
+.tag-green { background: rgba(74,140,95,0.25); color: var(--accent-light); }
 
 /* ── TOPICS ── */
 .topics { background: var(--cream); }
@@ -1301,7 +1304,7 @@ footer a:hover { color: rgba(245,242,235,0.7); }
     gap: 2.5rem;
   }
   .approach-grid, .approach-grid--4 { grid-template-columns: 1fr; }
-  .approach-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .approach-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
   .topics-grid { grid-template-columns: 1fr; }
   .about-visual { aspect-ratio: 4/5; max-height: 420px; }
   .about-visual::before { display: none; }
@@ -1309,6 +1312,76 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   .form-row { grid-template-columns: 1fr; }
   section { padding: 5rem 6vw; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--ink);
+  color: rgba(245,242,235,0.85);
+  padding: 1.25rem 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-banner.cookie-banner--visible { transform: translateY(0); }
+
+.cookie-banner p { margin: 0; flex: 1; }
+
+.cookie-banner a {
+  color: rgba(245,242,235,0.6);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-banner a:hover { color: var(--paper); }
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 0.55rem 1.2rem;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.cookie-btn-accept {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.cookie-btn-accept:hover { background: var(--accent-light); border-color: var(--accent-light); }
+
+.cookie-btn-decline {
+  background: transparent;
+  color: rgba(245,242,235,0.7);
+}
+
+.cookie-btn-decline:hover { background: rgba(255,255,255,0.06); }
+
+@media (max-width: 600px) {
+  .cookie-banner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .cookie-banner-actions { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
 }
 
 /* ── SKIP LINK ── */
