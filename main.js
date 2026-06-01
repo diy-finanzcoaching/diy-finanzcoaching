@@ -6,13 +6,13 @@
 // Drawer wird nach dem <nav> ins DOM eingefügt
 const drawerHTML = `
 <div class="nav-drawer" id="nav-drawer">
-  <a class="nav-drawer-link" href="/diy-finanzcoaching.de/">Start</a>
-  <a class="nav-drawer-link" href="/diy-finanzcoaching.de/blog/">Blog</a>
-  <a class="nav-drawer-link" href="/diy-finanzcoaching.de/#contact">Kontakt</a>
+  <a class="nav-drawer-link" href="/">Start</a>
+  <a class="nav-drawer-link" href="/blog/">Blog</a>
+  <a class="nav-drawer-link" href="#contact">Kontakt</a>
   <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Termin buchen</a>
   <div class="nav-drawer-meta">
-    <a href="/diy-finanzcoaching.de/impressum.html">Impressum</a>
-    <a href="/diy-finanzcoaching.de/datenschutz.html">Datenschutz</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
   </div>
 </div>
 `;
@@ -44,7 +44,7 @@ drawer.querySelectorAll('a').forEach(link => {
 const footerHTML = `
 <footer>
   <div class="footer-logo">DIY Finanzcoaching</div>
-  <div>Oliver Nitsch · <a href="/diy-finanzcoaching.de/impressum.html">Impressum</a> · <a href="/diy-finanzcoaching.de/datenschutz.html">Datenschutz</a></div>
+  <div>Oliver Nitsch · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
   <div>© 2026</div>
 </footer>
 `;
