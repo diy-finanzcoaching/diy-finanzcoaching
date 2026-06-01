@@ -1033,16 +1033,19 @@ section { padding: 7rem 8vw; }
 .price-card::before {
   content: 'Jahresmitgliedschaft';
   position: absolute;
-  top: 1.2rem;
-  right: -2.5rem;
+  top: 2.2rem;
+  right: -2.8rem;
+  width: 12rem;
+  text-align: center;
   background: var(--gold);
   color: var(--ink);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.3rem 3rem;
+  padding: 0.3rem 0;
   transform: rotate(35deg);
+  transform-origin: center center;
 }
 
 .price-amount {
