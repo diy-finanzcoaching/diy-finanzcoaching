@@ -2,17 +2,23 @@
    DIY Finanzcoaching – main.js
    ============================================================ */
 
+// ── ROOT PATH DETECTION ──
+// Erkennt den Pfad zum Site-Root anhand des style.css-Links.
+// Root-Seiten laden "style.css", Blog-Seiten "../style.css".
+const _cssHref = document.querySelector('link[href$="style.css"]')?.getAttribute('href') ?? 'style.css';
+const ROOT = _cssHref.replace('style.css', '') || './';
+
 // ── DYNAMIC NAV DRAWER ──
 // Drawer wird nach dem <nav> ins DOM eingefügt
 const drawerHTML = `
 <div class="nav-drawer" id="nav-drawer">
-  <a class="nav-drawer-link" href="/">Start</a>
-  <a class="nav-drawer-link" href="/blog/">Blog</a>
+  <a class="nav-drawer-link" href="${ROOT}">Start</a>
+  <a class="nav-drawer-link" href="${ROOT}blog/">Blog</a>
   <a class="nav-drawer-link" href="#contact">Kontakt</a>
   <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Termin buchen</a>
   <div class="nav-drawer-meta">
-    <a href="/impressum.html">Impressum</a>
-    <a href="/datenschutz.html">Datenschutz</a>
+    <a href="${ROOT}impressum.html">Impressum</a>
+    <a href="${ROOT}datenschutz.html">Datenschutz</a>
   </div>
 </div>
 `;
@@ -44,7 +50,7 @@ drawer.querySelectorAll('a').forEach(link => {
 const footerHTML = `
 <footer>
   <div class="footer-logo">DIY Finanzcoaching</div>
-  <div>Oliver Nitsch · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+  <div>Oliver Nitsch · <a href="${ROOT}impressum.html">Impressum</a> · <a href="${ROOT}datenschutz.html">Datenschutz</a></div>
   <div>© 2026</div>
 </footer>
 `;
