@@ -221,3 +221,45 @@ function hideBanner(banner) {
 }
 
 initCookieBanner();
+
+// ── CONTACT FORM (web3forms) ──
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form-submit');
+    const feedback = contactForm.querySelector('.form-feedback');
+    const hCaptchaResponse = contactForm.querySelector('textarea[name=h-captcha-response]')?.value;
+    if (!hCaptchaResponse) {
+      feedback.className = 'form-feedback form-feedback--error';
+      feedback.textContent = 'Bitte bestätige zuerst das Captcha.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet …';
+    feedback.className = 'form-feedback';
+    feedback.textContent = '';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(contactForm),
+      });
+      const data = await res.json();
+      if (data.success) {
+        feedback.classList.add('form-feedback--success');
+        feedback.textContent = 'Danke – deine Nachricht ist angekommen! Ich melde mich in der Regel innerhalb von 24–48 Stunden.';
+        contactForm.reset();
+      } else {
+        throw new Error(data.message);
+      }
+    } catch {
+      feedback.classList.add('form-feedback--error');
+      feedback.textContent = 'Da ist leider etwas schiefgelaufen. Bitte versuche es noch einmal oder schreib direkt an info@diy-finanzcoaching.de.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Nachricht senden →';
+    }
+  });
+}

@@ -373,15 +373,18 @@
         <div class="contact-meta-item">Alternativ: direkt einen <a href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none; font-weight:500;">Termin buchen →</a></div>
       </div>
     </div>
-    <form class="contact-form" action="#" method="post">
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="663cc4bb-13a8-4038-afe6-2d0d86a3a724">
+      <input type="hidden" name="subject" value="Neue Kontaktanfrage – DIY Finanzcoaching">
+      <input type="hidden" name="redirect" value="false">
       <div class="form-row">
         <div class="form-group">
           <label for="contact-name">Name</label>
-          <input type="text" id="contact-name" name="name" placeholder="Dein Name" autocomplete="name">
+          <input type="text" id="contact-name" name="name" placeholder="Dein Name" autocomplete="name" required>
         </div>
         <div class="form-group">
           <label for="contact-email">E-Mail</label>
-          <input type="email" id="contact-email" name="email" placeholder="deine@email.de" autocomplete="email">
+          <input type="email" id="contact-email" name="email" placeholder="deine@email.de" autocomplete="email" required>
         </div>
       </div>
       <div class="form-group">
@@ -397,10 +400,12 @@
       </div>
       <div class="form-group">
         <label for="contact-message">Nachricht</label>
-        <textarea id="contact-message" name="message" placeholder="Was beschäftigt dich?"></textarea>
+        <textarea id="contact-message" name="message" placeholder="Was beschäftigt dich?" required></textarea>
       </div>
+      <div class="h-captcha" data-captcha="true" data-lang="de"></div>
       <button type="submit" class="form-submit" aria-describedby="form-note">Nachricht senden →</button>
       <p class="form-note" id="form-note">Deine Daten werden ausschließlich zur Beantwortung deiner Anfrage verwendet und nicht weitergegeben.</p>
+      <div class="form-feedback" role="alert" aria-live="polite"></div>
     </form>
   </div>
 </section>
@@ -411,5 +416,6 @@
 <footer></footer>
 
 <script src="main.js"></script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
