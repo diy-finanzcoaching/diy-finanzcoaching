@@ -157,3 +157,47 @@ const barObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.cost-chart').forEach(el => barObserver.observe(el));
+
+// ── COOKIE BANNER ──
+const COOKIE_KEY = 'diy_cookie_consent';
+
+function initCookieBanner() {
+  if (localStorage.getItem(COOKIE_KEY)) return; // bereits entschieden
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Cookie-Hinweis');
+  banner.innerHTML = `
+    <p>
+      Diese Website lädt Schriften über Google Fonts. Dabei wird deine IP-Adresse
+      an Google übertragen. Mit Klick auf „Akzeptieren" stimmst du dem zu.
+      Mehr dazu in der <a href="${ROOT}datenschutz.html">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-btn-decline">Ablehnen</button>
+      <button class="cookie-btn cookie-btn-accept">Akzeptieren</button>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+  // kurze Verzögerung damit die CSS-Transition greift
+  requestAnimationFrame(() => requestAnimationFrame(() => banner.classList.add('cookie-banner--visible')));
+
+  banner.querySelector('.cookie-btn-accept').addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'accepted');
+    hideBanner(banner);
+  });
+
+  banner.querySelector('.cookie-btn-decline').addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'declined');
+    hideBanner(banner);
+  });
+}
+
+function hideBanner(banner) {
+  banner.classList.remove('cookie-banner--visible');
+  banner.addEventListener('transitionend', () => banner.remove(), { once: true });
+}
+
+initCookieBanner();
