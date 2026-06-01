@@ -4,24 +4,17 @@ inject_nav.py – DIY Finanzcoaching
 Ersetzt den <nav>...</nav>-Block in allen HTML-Dateien automatisch.
 Nav-Inhalt wird zentral in _nav.html gepflegt.
 
-Der Platzhalter {ROOT} wird je nach Verzeichnistiefe ersetzt:
-  - Root-Dateien (index.html, impressum.html …): {ROOT} → ./
-  - Unterordner (blog/*.html):                   {ROOT} → ../
+Der Platzhalter {ROOT} wird je nach Verzeichnistiefe relativ zum
+Repo-Root ersetzt: Root-Seiten → ./, blog/ → ../, blog/post/ → ../../
 """
 
 import os
 import re
 
-REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
-NAV_FILE  = os.path.join(REPO_ROOT, "_nav.html")
-
-# Tupel: (Verzeichnis, relativer Pfad zum Root)
-SEARCH_DIRS = [
-    (REPO_ROOT,                          "./"),
-    (os.path.join(REPO_ROOT, "blog"),    "../"),
-]
-
+REPO_ROOT     = os.path.dirname(os.path.abspath(__file__))
+NAV_FILE      = os.path.join(REPO_ROOT, "_nav.html")
 EXCLUDE_FILES = {"_nav.html"}
+EXCLUDE_DIRS  = {".git", "Assets"}
 
 
 def load_nav():
@@ -51,25 +44,30 @@ def inject_nav_into_file(filepath, nav_html):
     print(f"  AKTUALISIERT: {filepath}")
 
 
+def root_prefix_for(dirpath):
+    """Gibt den relativen Pfad vom Verzeichnis zum Repo-Root zurück."""
+    rel = os.path.relpath(dirpath, REPO_ROOT)
+    if rel == ".":
+        return "./"
+    depth = len(rel.split(os.sep))
+    return "../" * depth
+
+
 def main():
     nav_template = load_nav()
     print(f"Nav geladen aus: {NAV_FILE}\n")
 
-    for directory, root_prefix in SEARCH_DIRS:
-        if not os.path.isdir(directory):
-            print(f"Ordner nicht gefunden, übersprungen: {directory}")
-            continue
+    for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
+        # Versteckte Ordner und Assets überspringen
+        dirnames[:] = [d for d in dirnames if d not in EXCLUDE_DIRS and not d.startswith(".")]
 
-        nav_html = nav_template.replace("{ROOT}", root_prefix)
+        prefix   = root_prefix_for(dirpath)
+        nav_html = nav_template.replace("{ROOT}", prefix)
 
-        for filename in os.listdir(directory):
-            if not filename.endswith(".html"):
+        for filename in filenames:
+            if not filename.endswith(".html") or filename in EXCLUDE_FILES:
                 continue
-            if filename in EXCLUDE_FILES:
-                continue
-
-            filepath = os.path.join(directory, filename)
-            inject_nav_into_file(filepath, nav_html)
+            inject_nav_into_file(os.path.join(dirpath, filename), nav_html)
 
     print("\nFertig.")
 
