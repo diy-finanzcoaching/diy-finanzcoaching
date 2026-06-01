@@ -4,307 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DIY Finanzblog – Oliver Nitsch</title>
+<meta name="description" content="Der DIY Finanzblog von Oliver Nitsch: Praktische Strategien zu Geldanlage, Versicherungen und finanzieller Unabhängigkeit – kostenlos, ohne Anmeldung.">
+<link rel="canonical" href="https://www.diy-finanzcoaching.de/blog/">
+<meta property="og:title" content="DIY Finanzblog – Oliver Nitsch">
+<meta property="og:description" content="Praktische Strategien zu Geldanlage, Versicherungen und finanzieller Unabhängigkeit – kostenlos, ohne Anmeldung, ohne Verkaufsabsicht.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.diy-finanzcoaching.de/blog/">
+<meta property="og:image" content="https://www.diy-finanzcoaching.de/Assets/Banner_Startseite.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DIY Finanzblog – Oliver Nitsch">
+<meta name="twitter:description" content="Praktische Strategien zu Geldanlage, Versicherungen und finanzieller Unabhängigkeit – kostenlos, ohne Anmeldung.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<style>
-
-  /* ── BLOG HERO ── */
-  .blog-page-hero {
-    padding: 10rem 8vw 5rem;
-    background: var(--paper);
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: end;
-  }
-
-  .blog-page-hero .section-label { margin-bottom: 1rem; }
-
-  .blog-page-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 0;
-  }
-
-  .blog-page-hero h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .blog-hero-sub {
-    font-size: 1.05rem;
-    color: var(--muted);
-    line-height: 1.8;
-    max-width: 44ch;
-    align-self: end;
-  }
-
-  /* ── FILTER BAR ── */
-  .blog-filter {
-    padding: 1.8rem 8vw;
-    background: var(--cream);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .blog-filter-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: var(--muted);
-    margin-right: 0.5rem;
-  }
-
-  .filter-btn {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    padding: 0.35rem 1rem;
-    border-radius: 2px;
-    border: 1px solid var(--border);
-    background: var(--paper);
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .filter-btn:hover,
-  .filter-btn.active {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-  }
-
-  /* ── BLOG GRID ── */
-  .blog-grid-section {
-    padding: 5rem 8vw 7rem;
-    background: var(--paper);
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  /* ── BLOG CARD ── */
-  .blog-card {
-    background: var(--paper);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.25s, transform 0.25s;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .blog-card:hover {
-    box-shadow: 0 8px 40px rgba(0,0,0,0.09);
-    transform: translateY(-3px);
-  }
-
-  .blog-card-img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .blog-card-body {
-    padding: 1.8rem 1.8rem 1.4rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 0.75rem;
-  }
-
-  .blog-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .blog-card-category {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .blog-card-category::before {
-    content: '';
-    display: block;
-    width: 16px;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  .blog-card-date {
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-
-  .blog-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin: 0;
-  }
-
-  .blog-card-excerpt {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.7;
-    flex: 1;
-  }
-
-  .blog-card-link {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-    transition: gap 0.2s;
-  }
-
-  .blog-card:hover .blog-card-link { gap: 0.7rem; }
-
-  /* Karte allein in einer Reihe → volle Breite wie featured */
-  .blog-card.solo {
-    grid-column: 1 / -1;
-    flex-direction: row;
-  }
-
-  .blog-card.solo .blog-card-img {
-    width: 48%;
-    aspect-ratio: auto;
-    flex-shrink: 0;
-    border-bottom: none;
-    border-right: 1px solid var(--border);
-  }
-
-  .blog-card.solo .blog-card-body {
-    justify-content: center;
-  }
-
-  /* Featured card (first post) – spans full width */
-  .blog-card.featured {
-    grid-column: 1 / -1;
-    flex-direction: row;
-  }
-
-  .blog-card.featured .blog-card-img {
-    width: 48%;
-    aspect-ratio: auto;
-    flex-shrink: 0;
-    border-bottom: none;
-    border-right: 1px solid var(--border);
-  }
-
-  .blog-card.featured .blog-card-body {
-    padding: 2.5rem 2.5rem;
-    justify-content: center;
-  }
-
-  .blog-card.featured .blog-card-title {
-    font-size: 1.8rem;
-    line-height: 1.2;
-  }
-
-  .blog-card.featured .blog-card-excerpt {
-    font-size: 0.95rem;
-    max-width: 52ch;
-  }
-
-  /* ── CTA BANNER ── */
-  .blog-cta-banner {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 5rem 8vw;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .blog-cta-banner .section-label {
-    color: var(--gold);
-    justify-content: center;
-  }
-
-  .blog-cta-banner .section-label::before {
-    background: var(--gold);
-  }
-
-  .blog-cta-banner h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    color: var(--paper);
-    margin: 1rem auto 1.2rem;
-    max-width: 46ch;
-  }
-
-  .blog-cta-banner p {
-    color: rgba(245,242,235,0.65);
-    font-size: 1rem;
-    line-height: 1.75;
-    max-width: 48ch;
-    margin: 0 auto 2.5rem;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .blog-page-hero {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding-top: 7rem;
-    }
-    .blog-grid { grid-template-columns: 1fr; }
-    .blog-card.featured,
-    .blog-card.solo {
-      flex-direction: column;
-      grid-column: auto;
-    }
-
-    .blog-card.featured .blog-card-img,
-    .blog-card.solo .blog-card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-    }
-  }
-
-
-
-</style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- NAV -->
 <nav>
@@ -313,13 +28,15 @@
     <a class="nav-link" href="../blog/">Blog</a>
     <a class="nav-link" href="../#contact">Kontakt</a>
   </div>
-  <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Kostenloses Kennlerngespräch buchen</a>
+  <a class="nav-cta" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer">Kostenloses Kennlerngespräch buchen</a>
   <button class="nav-burger" aria-label="Menü öffnen">
     <span></span>
     <span></span>
     <span></span>
   </button>
 </nav>
+
+<main id="main-content">
 
 <!-- BLOG HERO -->
 <div class="blog-page-hero reveal">
@@ -350,11 +67,14 @@
         class="blog-card-img"
         src="excel-tool-vs-finanzguru/banner.png"
         alt="Excel-Tool vs. Finanzguru"
+        loading="lazy"
+        width="800"
+        height="450"
       >
       <div class="blog-card-body">
         <div class="blog-card-meta">
           <span class="blog-card-category">Finanzüberblick</span>
-          <span class="blog-card-date">04. Februar 2026</span>
+          <time class="blog-card-date" datetime="2026-02-04">04. Februar 2026</time>
         </div>
         <h2 class="blog-card-title">Warum mein einfaches Excel-Tool für mich besser funktioniert als Finanzguru</h2>
         <p class="blog-card-excerpt">Ich habe Finanzguru Pro getestet. Die Technik ist beeindruckend. Trotzdem nutze ich heute wieder mein eigenes, bewusst schlichtes Excel-Tool – nicht weil Finanzguru schlecht wäre, sondern weil mein Ziel ein anderes ist.</p>
@@ -368,11 +88,14 @@
         class="blog-card-img"
         src="sind-nachhaltige-geldanlagen-wirklich-sinnvoll/banner.png"
         alt="Sind nachhaltige Geldanlagen wirklich sinnvoll?"
+        loading="lazy"
+        width="800"
+        height="450"
       >
       <div class="blog-card-body">
         <div class="blog-card-meta">
           <span class="blog-card-category">Investment</span>
-          <span class="blog-card-date">06. Januar 2026</span>
+          <time class="blog-card-date" datetime="2026-01-06">06. Januar 2026</time>
         </div>
         <h2 class="blog-card-title">Sind nachhaltige Geldanlagen wirklich sinnvoll?</h2>
         <p class="blog-card-excerpt">ESG-ETF, grüne Fonds, Impact Investing – das Versprechen klingt überzeugend. Ich habe mich viele Jahre damit beschäftigt und sehe es heute differenzierter.</p>
@@ -388,8 +111,10 @@
   <div class="section-label">DIY Finanzcoaching</div>
   <h2>Aus Lesen wird Handeln.</h2>
   <p>Im Coaching setzen wir das Gelesene konkret für deine Situation um – strukturiert, transparent, ohne Interessenkonflikt.</p>
-  <a href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" class="btn-primary">Kostenloses Kennlerngespräch buchen →</a>
+  <a href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer" class="btn-primary">Kostenloses Kennlerngespräch buchen →</a>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer></footer>
