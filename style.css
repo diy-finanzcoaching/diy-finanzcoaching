@@ -1033,18 +1033,23 @@ section { padding: 7rem 8vw; }
 .price-card::before {
   content: 'Jahresmitgliedschaft';
   position: absolute;
-  /* Equidistant from the corner: top = right = width/2 → center sits on the 45° diagonal */
-  top: 5.5rem;
-  right: -5.5rem;
+  /* 45° corner ribbon. Center sits on the corner diagonal so both ends
+     are clipped symmetrically. Visible band length = 2·d (d = 5.5rem),
+     so width must match to fit the text. With width=b, height=h:
+     right = d/√2 − b/2  and  top = d/√2 − h/2  (d/√2 ≈ 3.89rem). */
+  top: 3.2rem;
+  right: -1.6rem;
   width: 11rem;
+  box-sizing: border-box;
   text-align: center;
   background: var(--gold);
   color: var(--ink);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  line-height: 1;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.3rem 0;
+  padding: 0.35rem 0;
   transform: rotate(45deg);
 }
 
