@@ -585,13 +585,14 @@ section { padding: 7rem 8vw; }
 
 /* ── PROBLEM SECTION ── */
 .problem {
-  background: var(--paper);
+  background: var(--cream);
   color: var(--ink);
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 6rem;
   align-items: center;
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .problem .section-label { color: var(--accent); }
@@ -727,37 +728,33 @@ section { padding: 7rem 8vw; }
 
 /* ── APPROACH ── */
 .approach {
-  background: var(--ink);
+  background: var(--paper);
+  border-top: 1px solid var(--border);
   padding: 7rem 8vw;
 }
-
-.approach .section-label { color: var(--gold); }
-.approach .section-label::before { background: var(--gold); }
-.approach .section-title { color: var(--paper); }
-.approach .section-sub { color: rgba(245,242,235,0.6); }
 
 .approach-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   margin-top: 4rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
 }
 
 .approach-card {
   padding: 2.5rem 2rem;
-  border-right: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid var(--border);
   position: relative;
   transition: background 0.2s;
 }
 .approach-card:last-child { border-right: none; }
-.approach-card:hover { background: rgba(255,255,255,0.04); }
+.approach-card:hover { background: var(--cream); }
 
 .approach-num {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 700;
-  color: rgba(255,255,255,0.07);
+  color: rgba(45,90,61,0.1);
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -767,10 +764,10 @@ section { padding: 7rem 8vw; }
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  color: var(--paper);
+  color: var(--ink);
 }
 
-.approach-text { font-size: 0.9rem; color: rgba(245,242,235,0.6); line-height: 1.7; }
+.approach-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
 
 .approach-tag {
   display: inline-block;
@@ -784,9 +781,9 @@ section { padding: 7rem 8vw; }
 }
 .approach-grid--4 { grid-template-columns: repeat(4, 1fr); }
 
-.tag-red { background: rgba(180,60,60,0.25); color: #e87878; }
-.tag-amber { background: rgba(184,151,58,0.2); color: #d4ac50; }
-.tag-green { background: rgba(74,140,95,0.25); color: var(--accent-light); }
+.tag-red { background: rgba(180,60,60,0.08); color: #b43c3c; }
+.tag-amber { background: rgba(184,151,58,0.1); color: #7a6015; }
+.tag-green { background: rgba(45,90,61,0.1); color: var(--accent); }
 
 /* ── TOPICS ── */
 .topics { background: var(--cream); }
@@ -1304,7 +1301,7 @@ footer a:hover { color: rgba(245,242,235,0.7); }
     gap: 2.5rem;
   }
   .approach-grid, .approach-grid--4 { grid-template-columns: 1fr; }
-  .approach-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .approach-card { border-right: none; border-bottom: 1px solid var(--border); }
   .topics-grid { grid-template-columns: 1fr; }
   .about-visual { aspect-ratio: 4/5; max-height: 420px; }
   .about-visual::before { display: none; }
