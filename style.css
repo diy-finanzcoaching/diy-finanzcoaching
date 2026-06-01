@@ -1033,7 +1033,7 @@ section { padding: 7rem 8vw; }
 .price-card::before {
   content: 'Jahresmitgliedschaft';
   position: absolute;
-  top: 1.8rem;
+  top: 2.8rem;
   right: -2.2rem;
   width: 10rem;
   text-align: center;
