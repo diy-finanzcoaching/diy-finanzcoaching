@@ -2054,18 +2054,11 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--ink);
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--paper);
   overflow: hidden;
-  background-size: cover;
-  background-position: center top;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--ink);
 }
 
 .post-author-info {
