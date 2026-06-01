@@ -3,22 +3,24 @@
 inject_nav.py – DIY Finanzcoaching
 Ersetzt den <nav>...</nav>-Block in allen HTML-Dateien automatisch.
 Nav-Inhalt wird zentral in _nav.html gepflegt.
+
+Der Platzhalter {ROOT} wird je nach Verzeichnistiefe ersetzt:
+  - Root-Dateien (index.html, impressum.html …): {ROOT} → ./
+  - Unterordner (blog/*.html):                   {ROOT} → ../
 """
 
 import os
 import re
 
-# ── Pfad zum Repository-Root (relativ zum Script-Standort)
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 NAV_FILE  = os.path.join(REPO_ROOT, "_nav.html")
 
-# ── HTML-Dateien in diesen Ordnern werden verarbeitet
+# Tupel: (Verzeichnis, relativer Pfad zum Root)
 SEARCH_DIRS = [
-    REPO_ROOT,              # Root: index.html, impressum.html, datenschutz.html ...
-    os.path.join(REPO_ROOT, "blog"),  # blog/: index.html, alle Post-Dateien
+    (REPO_ROOT,                          "./"),
+    (os.path.join(REPO_ROOT, "blog"),    "../"),
 ]
 
-# ── Dateien die NICHT angefasst werden sollen
 EXCLUDE_FILES = {"_nav.html"}
 
 
@@ -31,7 +33,6 @@ def inject_nav_into_file(filepath, nav_html):
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Ersetze alles zwischen <nav> und </nav> (inkl. Tags)
     pattern = re.compile(r"<nav>.*?</nav>", re.DOTALL)
 
     if not pattern.search(content):
@@ -51,13 +52,15 @@ def inject_nav_into_file(filepath, nav_html):
 
 
 def main():
-    nav_html = load_nav()
+    nav_template = load_nav()
     print(f"Nav geladen aus: {NAV_FILE}\n")
 
-    for directory in SEARCH_DIRS:
+    for directory, root_prefix in SEARCH_DIRS:
         if not os.path.isdir(directory):
             print(f"Ordner nicht gefunden, übersprungen: {directory}")
             continue
+
+        nav_html = nav_template.replace("{ROOT}", root_prefix)
 
         for filename in os.listdir(directory):
             if not filename.endswith(".html"):
