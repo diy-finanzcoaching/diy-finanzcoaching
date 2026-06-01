@@ -15,7 +15,7 @@ const drawerHTML = `
   <a class="nav-drawer-link" href="${ROOT}">Start</a>
   <a class="nav-drawer-link" href="${ROOT}blog/">Blog</a>
   <a class="nav-drawer-link" href="${ROOT}#contact">Kontakt</a>
-  <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Termin buchen</a>
+  <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer">Termin buchen</a>
   <div class="nav-drawer-meta">
     <a href="${ROOT}impressum.html">Impressum</a>
     <a href="${ROOT}datenschutz.html">Datenschutz</a>
