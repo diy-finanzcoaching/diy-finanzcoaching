@@ -15,7 +15,7 @@ const drawerHTML = `
   <a class="nav-drawer-link" href="${ROOT}">Start</a>
   <a class="nav-drawer-link" href="${ROOT}blog/">Blog</a>
   <a class="nav-drawer-link" href="${ROOT}#contact">Kontakt</a>
-  <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Termin buchen</a>
+  <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer">Termin buchen</a>
   <div class="nav-drawer-meta">
     <a href="${ROOT}impressum.html">Impressum</a>
     <a href="${ROOT}datenschutz.html">Datenschutz</a>
@@ -113,9 +113,10 @@ window.addEventListener('load', () => {
 });
 
 // ── ACTIVE NAV LINK (für Unterseiten) ──
-const currentPage = window.location.pathname.split('/').pop();
+const currentPath = window.location.pathname.replace(/\/$/, '') + '/';
 document.querySelectorAll('nav a').forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
+  const href = link.getAttribute('href');
+  if (href && (currentPath.endsWith('/' + href) || currentPath === href || currentPath.endsWith(href))) {
     link.style.opacity = '0.5';
     link.style.pointerEvents = 'none';
   }
