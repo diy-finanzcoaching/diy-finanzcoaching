@@ -13,6 +13,7 @@
   --gold: #b8973a;
   --muted: #7a7668;
   --border: #d4cfc3;
+  --tint: #e4edea;
 }
 
 html { scroll-behavior: smooth; }
@@ -727,7 +728,7 @@ section { padding: 7rem 8vw; }
 
 /* ── APPROACH ── */
 .approach {
-  background: var(--cream);
+  background: var(--tint);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 7rem 8vw;

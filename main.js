@@ -158,11 +158,29 @@ const barObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.cost-chart').forEach(el => barObserver.observe(el));
 
-// ── COOKIE BANNER ──
+// ── COOKIE BANNER & ANALYTICS ──
 const COOKIE_KEY = 'diy_cookie_consent';
+// ↓ Google Analytics Measurement-ID hier eintragen
+const GA_ID = 'G-XXXXXXXXXX';
+
+function loadAnalytics() {
+  if (document.getElementById('ga-script')) return;
+  const s = document.createElement('script');
+  s.id = 'ga-script';
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
+}
 
 function initCookieBanner() {
-  if (localStorage.getItem(COOKIE_KEY)) return; // bereits entschieden
+  const stored = localStorage.getItem(COOKIE_KEY);
+  if (stored === 'accepted') { loadAnalytics(); return; }
+  if (stored === 'declined') return;
 
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
@@ -170,9 +188,11 @@ function initCookieBanner() {
   banner.setAttribute('aria-label', 'Cookie-Hinweis');
   banner.innerHTML = `
     <p>
-      Diese Website lädt Schriften über Google Fonts. Dabei wird deine IP-Adresse
-      an Google übertragen. Mit Klick auf „Akzeptieren" stimmst du dem zu.
-      Mehr dazu in der <a href="${ROOT}datenschutz.html">Datenschutzerklärung</a>.
+      Diese Website verwendet Google Fonts und Google Analytics.
+      Dabei werden Daten (u.&nbsp;a. deine IP-Adresse) an Google übertragen.
+      Mit „Akzeptieren" stimmst du dem zu – bei „Ablehnen" werden keine
+      Tracking-Daten erhoben und Schriften lokal ersetzt.
+      <a href="${ROOT}datenschutz.html">Datenschutzerklärung</a>
     </p>
     <div class="cookie-banner-actions">
       <button class="cookie-btn cookie-btn-decline">Ablehnen</button>
@@ -181,12 +201,12 @@ function initCookieBanner() {
   `;
 
   document.body.appendChild(banner);
-  // kurze Verzögerung damit die CSS-Transition greift
   requestAnimationFrame(() => requestAnimationFrame(() => banner.classList.add('cookie-banner--visible')));
 
   banner.querySelector('.cookie-btn-accept').addEventListener('click', () => {
     localStorage.setItem(COOKIE_KEY, 'accepted');
     hideBanner(banner);
+    loadAnalytics();
   });
 
   banner.querySelector('.cookie-btn-decline').addEventListener('click', () => {
