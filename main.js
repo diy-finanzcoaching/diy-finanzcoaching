@@ -229,6 +229,13 @@ if (contactForm) {
     e.preventDefault();
     const btn = contactForm.querySelector('.form-submit');
     const feedback = contactForm.querySelector('.form-feedback');
+    const hCaptchaResponse = contactForm.querySelector('textarea[name=h-captcha-response]')?.value;
+    if (!hCaptchaResponse) {
+      feedback.className = 'form-feedback form-feedback--error';
+      feedback.textContent = 'Bitte bestätige zuerst das Captcha.';
+      return;
+    }
+
     btn.disabled = true;
     btn.textContent = 'Wird gesendet …';
     feedback.className = 'form-feedback';
