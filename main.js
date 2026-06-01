@@ -8,7 +8,7 @@ const drawerHTML = `
 <div class="nav-drawer" id="nav-drawer">
   <a class="nav-drawer-link" href="/diy-finanzcoaching.de/">Start</a>
   <a class="nav-drawer-link" href="/diy-finanzcoaching.de/blog/">Blog</a>
-  <a class="nav-drawer-link" href="/diy-finanzcoaching.de/#contact">Kontakt</a>
+  <a class="nav-drawer-link" href="#contact">Kontakt</a>
   <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting">Termin buchen</a>
   <div class="nav-drawer-meta">
     <a href="/diy-finanzcoaching.de/impressum.html">Impressum</a>
