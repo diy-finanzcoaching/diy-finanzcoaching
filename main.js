@@ -100,6 +100,18 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// ── HASH NAVIGATION ──
+// Beim direkten Aufruf mit #anchor (z. B. von einer anderen Seite):
+// Reveal-Animation am Ziel sofort auslösen, dann hinscrollen.
+window.addEventListener('load', () => {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  target.classList.add('visible');
+  setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+});
+
 // ── ACTIVE NAV LINK (für Unterseiten) ──
 const currentPage = window.location.pathname.split('/').pop();
 document.querySelectorAll('nav a').forEach(link => {
