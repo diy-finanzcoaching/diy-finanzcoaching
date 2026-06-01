@@ -1399,7 +1399,7 @@ footer a:hover { color: rgba(245,242,235,0.7); }
 .blog-page-hero {
   padding: 10rem 8vw 5rem;
   background: var(--ink);
-  background-image: url('blog/banner.png');
+  background-image: url('Assets/Blog_Uebersicht_Banner.png');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
