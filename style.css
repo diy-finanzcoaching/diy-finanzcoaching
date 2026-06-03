@@ -218,7 +218,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   padding-top: 80px;
   position: relative;
   overflow: hidden;
-  background-image: url('Assets/Banner_Startseite.png');
+  background-image: url('Assets/Banner_Startseite.webp');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -950,7 +950,7 @@ section { padding: 7rem 8vw; }
   height: 100%;
   background-size: cover;
   background-position: center top;
-  background-image: url('Assets/Portrait%20Bart%20gestutzt.png');
+  background-image: url('Assets/Portrait%20Bart%20gestutzt.webp');
   background-repeat: no-repeat;
 }
 
@@ -1430,7 +1430,7 @@ footer a:hover { color: rgba(245,242,235,0.7); }
 .blog-page-hero {
   padding: 10rem 8vw 5rem;
   background: var(--ink);
-  background-image: url('blog/banner.png');
+  background-image: url('blog/banner.webp');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
