@@ -2421,3 +2421,123 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   border-radius: 100px;
   margin-top: 0.5rem;
 }
+
+/* ── PRINCIPLE SECTION (Das Prinzip) ── */
+.principle {
+  background: var(--cream);
+  color: var(--ink);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.principle .section-label { color: var(--accent); }
+.principle .section-label::before { background: var(--accent); }
+
+.principle-intro {
+  max-width: 760px;
+  margin-bottom: 4rem;
+}
+
+.principle-lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-top: 1.5rem;
+  max-width: 68ch;
+}
+.principle-lead strong { color: var(--ink); font-weight: 500; }
+
+.principle-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.principle-step {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.principle-step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: rgba(45,90,61,0.18);
+  line-height: 0.9;
+}
+
+.principle-step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.9rem;
+}
+
+.principle-step-text {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.85;
+  max-width: 62ch;
+}
+
+.principle-callout {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--ink);
+  background: var(--paper);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 2px 2px 0;
+  padding: 2rem 2.5rem;
+  margin-left: 5.25rem;
+  max-width: 62ch;
+}
+.principle-callout strong { font-style: normal; color: var(--ink); }
+
+.principle-membership {
+  margin: 3rem 0 0 5.25rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  max-width: 64ch;
+}
+.principle-membership p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.principle-membership strong { color: var(--ink); font-weight: 500; }
+
+.principle-goal {
+  margin-top: 2.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-left: 3px solid var(--gold);
+  border-radius: 3px;
+  padding: 2.5rem 3rem;
+}
+
+.principle-goal-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+.principle-goal-sub {
+  font-size: 0.95rem;
+  color: rgba(245,242,235,0.6);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .principle-step { grid-template-columns: 2.5rem 1fr; gap: 1.25rem; }
+  .principle-step-num { font-size: 2rem; }
+  .principle-callout { margin-left: 0; padding: 1.5rem 1.75rem; }
+  .principle-membership { margin-left: 0; }
+  .principle-goal { padding: 2rem 1.75rem; }
+}
