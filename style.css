@@ -2513,24 +2513,26 @@ footer a:hover { color: rgba(245,242,235,0.7); }
 
 .principle-goal {
   margin-top: 2.5rem;
-  background: var(--ink);
-  color: var(--paper);
-  border-left: 3px solid var(--gold);
-  border-radius: 3px;
-  padding: 2.5rem 3rem;
+  background: transparent;
+  color: var(--ink);
+  border-left: 2px solid var(--gold);
+  border-radius: 0;
+  padding: 1.5rem 2rem;
 }
 
 .principle-goal-headline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 700;
+  font-style: italic;
   line-height: 1.4;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
 }
 
 .principle-goal-sub {
-  font-size: 0.95rem;
-  color: rgba(245,242,235,0.6);
+  font-size: 0.9rem;
+  color: var(--muted);
   line-height: 1.7;
 }
 
