@@ -74,7 +74,7 @@ nav.nav--hidden { transform: translateY(-100%); }
   display: block;
 }
 
-.nav-logo span { color: var(--ink); font-weight: 400; font-style: italic; }
+.nav-logo span { color: var(--accent); font-weight: 400; font-style: italic; }
 
 .nav-links {
   display: flex;
