@@ -290,15 +290,6 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   z-index: 1;
 }
 
-.hero-right::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(245, 242, 235, 0.04);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .stat-card {
   position: relative;
   z-index: 2;
@@ -479,7 +470,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   background: rgba(245, 242, 235, 0.10);
   border: 1px solid rgba(245, 242, 235, 0.18);
   border-radius: 4px;
-  padding: 2rem 2.2rem;
+  padding: 1.6rem 2rem;
   max-width: 360px;
   width: 100%;
   backdrop-filter: blur(8px);
@@ -500,14 +491,13 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .hero-topic-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.85rem;
-  padding: 0.85rem 0;
+  gap: 0.75rem;
+  padding: 0.8rem 0.5rem 0.8rem 0;
   border-bottom: 1px solid rgba(245, 242, 235, 0.10);
 }
 .hero-topic-item:last-child { border-bottom: none; }
@@ -528,9 +518,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
 }
 
 .hero-topic-desc {
-  font-size: 0.78rem;
-  color: rgba(245, 242, 235, 0.6);
-  line-height: 1.5;
+  display: none;
 }
 
 .hero-topics-more {
@@ -1407,15 +1395,8 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   .nav-burger { display: flex; }
 
   .hero { grid-template-columns: 1fr; }
-  .hero-right {
-    border-left: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 2.5rem 6vw 4rem;
-    justify-content: flex-start;
-  }
-  .hero-topics-card { max-width: 100%; }
-  .hero-topic-desc { display: none; }
-  .hero-left { padding: 4rem 6vw 2.5rem; }
+  .hero-right { display: none; }
+  .hero-left { padding: 4rem 6vw; }
   .problem, .topics-intro, .about, .pricing-layout, .cost-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
