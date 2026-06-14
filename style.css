@@ -259,13 +259,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   z-index: 1;
 }
 
-/* Textfarben für dunklen Hintergrund */
-.hero .hero-eyebrow { color: var(--gold); }
-.hero .hero-eyebrow::before { background: var(--gold); }
-.hero h1 { color: var(--paper); }
-.hero h1 em { color: var(--gold); }
-.hero .hero-lead { color: rgba(245, 242, 235, 0.75); }
-
+/* Textfarben für dunklen Hintergrund (siehe auch Basis-Regeln unten) */
 .hero .btn-secondary {
   color: var(--paper);
   border-color: rgba(245, 242, 235, 0.35);
@@ -317,7 +311,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--gold);
   margin-bottom: 1.8rem;
   opacity: 0;
   animation: fadeUp 0.7s 0.2s forwards;
@@ -328,7 +322,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   display: block;
   width: 28px;
   height: 1px;
-  background: var(--accent);
+  background: var(--gold);
 }
 
 .hero h1 {
@@ -338,6 +332,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 1.6rem;
+  color: var(--paper);
   opacity: 0;
   animation: fadeUp 0.8s 0.35s forwards;
 }
@@ -349,7 +344,7 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
 
 .hero-lead {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: rgba(245, 242, 235, 0.75);
   max-width: 44ch;
   margin-bottom: 2.5rem;
   opacity: 0;
