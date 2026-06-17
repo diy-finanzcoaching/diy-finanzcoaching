@@ -614,11 +614,11 @@ nav.nav--open .nav-burger span:nth-child(3) { width: 100%; transform: translateY
 section { padding: 7rem 8vw; }
 
 .section-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -627,8 +627,8 @@ section { padding: 7rem 8vw; }
 .section-label::before {
   content: '';
   display: block;
-  width: 24px;
-  height: 1px;
+  width: 28px;
+  height: 1.5px;
   background: var(--accent);
 }
 
@@ -1074,6 +1074,7 @@ section { padding: 7rem 8vw; }
   align-items: flex-start;
   gap: 1.5rem;
 }
+.blog-content .section-label { margin-bottom: 0; }
 
 /* ── PRICING ── */
 .pricing { background: var(--cream); }
