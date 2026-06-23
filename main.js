@@ -16,6 +16,7 @@ const drawerHTML = `
   <a class="nav-drawer-link" href="${ROOT}blog/">Blog</a>
   <a class="nav-drawer-link" href="${ROOT}#pricing">Preise</a>
   <a class="nav-drawer-link" href="${ROOT}#contact">Kontakt</a>
+  <a class="nav-drawer-link" href="https://app.diy-finanzcoaching.de" rel="noopener noreferrer">Login →</a>
   <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer">Termin buchen</a>
   <div class="nav-drawer-meta">
     <a href="${ROOT}impressum.html">Impressum</a>

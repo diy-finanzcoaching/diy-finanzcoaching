@@ -106,6 +106,16 @@ nav.nav--hidden { transform: translateY(-100%); }
 .nav-link:hover { color: var(--accent); }
 .nav-link:hover::after { width: 100%; }
 
+.nav-link--login {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+}
+.nav-link--login:hover { background: rgba(45,90,61,0.07); }
+.nav-link--login::after { display: none; }
+
 .nav-cta {
   background: var(--accent);
   color: #fff;
