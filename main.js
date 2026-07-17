@@ -2,6 +2,38 @@
    DIY Finanzcoaching – main.js
    ============================================================ */
 
+// ── CAL.COM BOOKING POPUP ──
+// Ersetzt Calendly durch ein cal.com-Popup (Modal), das sich öffnet,
+// ohne die Seite zu verlassen. Buchungslinks tragen die Attribute
+// data-cal-link / data-cal-namespace / data-cal-config und werden vom
+// cal.com-Embed automatisch als Popup-Trigger erkannt.
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", "coaching-uebersicht", { origin: "https://app.cal.com" });
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+
+Cal.ns["coaching-uebersicht"]("ui", {
+  theme: "light",
+  cssVarsPerTheme: {
+    light: {
+      "cal-brand": "#2d5a3d",
+      "cal-text": "#1a1a18",
+      "cal-text-emphasis": "#1a1a18",
+      "cal-text-muted": "#7a7668",
+      "cal-text-error": "#a33030",
+      "cal-border": "#d4cfc3",
+      "cal-border-default": "#d4cfc3",
+      "cal-border-subtle": "#d4cfc3",
+      "cal-border-booker": "#d4cfc3",
+      "cal-bg-emphasis": "#ede9df"
+    },
+    dark: { "cal-brand": "#fafafa" }
+  },
+  hideEventTypeDetails: false,
+  layout: "month_view"
+});
+
 // ── ROOT PATH DETECTION ──
 // Erkennt den Pfad zum Site-Root anhand des style.css-Links.
 // Root-Seiten laden "style.css", Blog-Seiten "../style.css".
@@ -17,7 +49,7 @@ const drawerHTML = `
   <a class="nav-drawer-link" href="${ROOT}#pricing">Preise</a>
   <a class="nav-drawer-link" href="${ROOT}#contact">Kontakt</a>
   <a class="nav-drawer-link" href="https://app.diy-finanzcoaching.de/dashboard" rel="noopener noreferrer">Login →</a>
-  <a class="nav-drawer-link" href="https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting" rel="noopener noreferrer">Termin buchen</a>
+  <a class="nav-drawer-link" href="https://app.cal.com/diy-finanzcoaching-oliver-nitsch" data-cal-namespace="coaching-uebersicht" data-cal-link="diy-finanzcoaching-oliver-nitsch" data-cal-config='{"layout":"month_view"}' rel="noopener noreferrer">Termin buchen</a>
   <div class="nav-drawer-meta">
     <a href="${ROOT}impressum.html">Impressum</a>
     <a href="${ROOT}datenschutz.html">Datenschutz</a>

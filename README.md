@@ -77,4 +77,4 @@ Dann im Browser: `http://localhost:8080`
 
 - **Coaching-Mitgliedschaft:** 135 €/Jahr (zzgl. MwSt.) – 2 Sessions, E-Mail-Support, Mitgliederbereich
 - **Themen:** Finanzüberblick, Versicherungen, Geldanlage & ETFs, Kredit & Finanzierung
-- **Buchung:** [Kostenloses Kennenlerngespräch via Calendly](https://calendly.com/diy-finanzcoaching-nitsch/neues-meeting)
+- **Buchung:** cal.com-Popup (öffnet ohne Seitenwechsel) – [Buchungsseite](https://app.cal.com/diy-finanzcoaching-oliver-nitsch)
