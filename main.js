@@ -75,9 +75,10 @@ function closeCalOverlay() {
   document.body.style.overflow = '';
 }
 
-// Klick-Delegation: alle Buchungslinks (data-cal-link) öffnen das Overlay
+// Klick-Delegation: alle Buchungslinks (data-cal-book) öffnen das Overlay.
+// Bewusst KEIN data-cal-link, damit cal.com kein eigenes Popup dazu bindet.
 document.addEventListener('click', (e) => {
-  const trigger = e.target.closest('[data-cal-link]');
+  const trigger = e.target.closest('[data-cal-book]');
   if (trigger) {
     e.preventDefault();
     openCalOverlay();
@@ -109,7 +110,7 @@ const drawerHTML = `
   <a class="nav-drawer-link" href="${ROOT}#pricing">Preise</a>
   <a class="nav-drawer-link" href="${ROOT}#contact">Kontakt</a>
   <a class="nav-drawer-link" href="https://app.diy-finanzcoaching.de/dashboard" rel="noopener noreferrer">Login →</a>
-  <a class="nav-drawer-link" href="https://app.cal.com/diy-finanzcoaching-oliver-nitsch" data-cal-namespace="coaching-uebersicht" data-cal-link="diy-finanzcoaching-oliver-nitsch" data-cal-config='{"layout":"month_view"}' rel="noopener noreferrer">Termin buchen</a>
+  <a class="nav-drawer-link" href="https://app.cal.com/diy-finanzcoaching-oliver-nitsch" data-cal-book rel="noopener noreferrer">Termin buchen</a>
   <div class="nav-drawer-meta">
     <a href="${ROOT}impressum.html">Impressum</a>
     <a href="${ROOT}datenschutz.html">Datenschutz</a>
