@@ -2,18 +2,22 @@
    DIY Finanzcoaching – main.js
    ============================================================ */
 
-// ── CAL.COM BOOKING POPUP ──
-// Ersetzt Calendly durch ein cal.com-Popup (Modal), das sich öffnet,
-// ohne die Seite zu verlassen. Buchungslinks tragen die Attribute
-// data-cal-link / data-cal-namespace / data-cal-config und werden vom
-// cal.com-Embed automatisch als Popup-Trigger erkannt.
+// ── CAL.COM BUCHUNGS-OVERLAY ──
+// Ersetzt Calendly durch das cal.com-Inline-Widget, eingebettet in ein
+// eigenes, im Seiten-Style gehaltenes Overlay. Klick auf einen Buchungs-
+// link öffnet das Overlay über der Seite – ohne sie zu verlassen.
+// Das Widget wird erst beim ersten Öffnen geladen (lazy).
+const CAL_NAMESPACE = "coaching-uebersicht";
+const CAL_LINK      = "diy-finanzcoaching-oliver-nitsch";
+
+// cal.com Embed-Loader
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 
-Cal("init", "coaching-uebersicht", { origin: "https://app.cal.com" });
+Cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" });
 Cal.config = Cal.config || {};
 Cal.config.forwardQueryParams = true;
 
-Cal.ns["coaching-uebersicht"]("ui", {
+Cal.ns[CAL_NAMESPACE]("ui", {
   theme: "light",
   cssVarsPerTheme: {
     light: {
@@ -32,6 +36,62 @@ Cal.ns["coaching-uebersicht"]("ui", {
   },
   hideEventTypeDetails: false,
   layout: "month_view"
+});
+
+// Overlay-Markup einmalig ins DOM einfügen
+const calOverlay = document.createElement('div');
+calOverlay.className = 'cal-overlay';
+calOverlay.setAttribute('aria-hidden', 'true');
+calOverlay.innerHTML = `
+  <div class="cal-overlay__backdrop" data-cal-close></div>
+  <div class="cal-overlay__dialog" role="dialog" aria-modal="true" aria-label="Termin buchen">
+    <button class="cal-overlay__close" type="button" aria-label="Schließen" data-cal-close>&times;</button>
+    <div class="cal-overlay__body">
+      <div id="cal-modal-inline" class="cal-overlay__embed"></div>
+    </div>
+  </div>
+`;
+document.body.appendChild(calOverlay);
+
+let calEmbedLoaded = false;
+
+function openCalOverlay() {
+  if (!calEmbedLoaded) {
+    Cal.ns[CAL_NAMESPACE]("inline", {
+      elementOrSelector: "#cal-modal-inline",
+      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+      calLink: CAL_LINK,
+    });
+    calEmbedLoaded = true;
+  }
+  calOverlay.classList.add('cal-overlay--open');
+  calOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCalOverlay() {
+  calOverlay.classList.remove('cal-overlay--open');
+  calOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Klick-Delegation: alle Buchungslinks (data-cal-link) öffnen das Overlay
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-cal-link]');
+  if (trigger) {
+    e.preventDefault();
+    openCalOverlay();
+    return;
+  }
+  if (e.target.closest('[data-cal-close]')) {
+    closeCalOverlay();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && calOverlay.classList.contains('cal-overlay--open')) {
+    closeCalOverlay();
+  }
 });
 
 // ── ROOT PATH DETECTION ──
