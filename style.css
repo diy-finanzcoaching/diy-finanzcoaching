@@ -2627,3 +2627,109 @@ footer a:hover { color: rgba(245,242,235,0.7); }
   .principle-membership { margin-left: 0; }
   .principle-goal { padding: 2rem 1.75rem; }
 }
+
+/* ============================================================
+   CAL.COM BUCHUNGS-OVERLAY
+   ============================================================ */
+.cal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.cal-overlay--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cal-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 24, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.cal-overlay__dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(94vw, 1040px);
+  height: min(90vh, 880px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 24px 60px rgba(26, 26, 24, 0.28);
+  overflow: hidden;
+  transform: translateY(12px) scale(0.99);
+  transition: transform 0.25s ease;
+}
+
+.cal-overlay--open .cal-overlay__dialog {
+  transform: translateY(0) scale(1);
+}
+
+.cal-overlay__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cal-overlay__close:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+
+.cal-overlay__body {
+  flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cal-overlay__embed {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.cal-overlay__embed iframe {
+  width: 100%;
+  min-height: 100%;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .cal-overlay { padding: 0; }
+  .cal-overlay__dialog {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+}
