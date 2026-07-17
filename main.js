@@ -286,6 +286,8 @@ function initCookieBanner() {
       Dabei werden Daten (u.&nbsp;a. deine IP-Adresse) an Google übertragen.
       Mit „Akzeptieren" stimmst du dem zu – bei „Ablehnen" werden keine
       Tracking-Daten erhoben und Schriften lokal ersetzt.
+      Für die Terminbuchung wird beim Öffnen des Buchungsfensters cal.com
+      geladen; dabei werden Daten an cal.com übertragen.
       <a href="${ROOT}datenschutz.html">Datenschutzerklärung</a>
     </p>
     <div class="cookie-banner-actions">
