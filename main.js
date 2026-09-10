@@ -106,7 +106,6 @@ const ROOT = _cssHref.replace('style.css', '') || './';
 const drawerHTML = `
 <div class="nav-drawer" id="nav-drawer">
   <a class="nav-drawer-link" href="${ROOT}">Start</a>
-  <a class="nav-drawer-link" href="${ROOT}blog/">Blog</a>
   <a class="nav-drawer-link" href="${ROOT}#pricing">Preise</a>
   <a class="nav-drawer-link" href="${ROOT}#contact">Kontakt</a>
   <a class="nav-drawer-link" href="https://app.diy-finanzcoaching.de/dashboard" rel="noopener noreferrer">Login →</a>
